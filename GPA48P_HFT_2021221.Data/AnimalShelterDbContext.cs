@@ -63,7 +63,7 @@ namespace GPA48P_HFT_2021221.Data
             });
 
             Owner owner1 = new Owner() { OwnerId = 1, FirstName = "János", LastName = "Lézer",
-                                         Address = "1234 ", PhoneNumber = 06302349876, };
+                                         Address = "1234 ", PhoneNumber = 06302349876 };
 
             Owner owner2 = new Owner() { OwnerId = 2, FirstName = "Béla", LastName = "Vas",
                                          Address = "1234 ", PhoneNumber = 06302349876 };
@@ -76,12 +76,18 @@ namespace GPA48P_HFT_2021221.Data
                                                            Address = "Budapest, Nagymező u. 8, 1065",
                                                            PhoneNumber = 0617217612, TaxNumber = 18334461142 };
 
-            Pet pet1 = new Pet() { PetId = 1, Class = "Kutya", Type = "Terrier", Age = 4, ReceptionDate = new DateTime(2007,1,30) };
-            Pet pet2 = new Pet() { PetId = 2, Class = "Kutya", Type = "Border Colie", Age = 7, ReceptionDate = new DateTime(2004,3,27) };
-            Pet pet3 = new Pet() { PetId = 3, Class = "Cica", Type = "Ragdoll", Age = 2, ReceptionDate = new DateTime(2019,2,12) };
-            Pet pet4 = new Pet() { PetId = 4, Class = "Cica", Type = "Sziámi", Age = 11, ReceptionDate = new DateTime(2010,4,19) };
-            Pet pet5 = new Pet() { PetId = 5, Class = "Madár", Type = "Papagáj", Age = 1, ReceptionDate = new DateTime(2020,8,23) };
-            Pet pet6 = new Pet() { PetId = 6, Class = "Madár", Type = "Pinty", Age = 3, ReceptionDate = new DateTime(2018,7,9) };
+            Pet pet1 = new Pet() { PetId = 1, Class = "Kutya", Type = "Terrier", Age = 4, ReceptionDate = new DateTime(2007,1,30),
+                                   OwnerId = owner1.OwnerId, ShelterId = shelter1.ShelterId };
+            Pet pet2 = new Pet() { PetId = 2, Class = "Kutya", Type = "Border Colie", Age = 7, ReceptionDate = new DateTime(2004,3,27),
+                                   OwnerId = owner2.OwnerId, ShelterId = shelter2.ShelterId };
+            Pet pet3 = new Pet() { PetId = 3, Class = "Cica", Type = "Ragdoll", Age = 2, ReceptionDate = new DateTime(2019,2,12),
+                                   OwnerId = owner1.OwnerId, ShelterId = shelter2.ShelterId };
+            Pet pet4 = new Pet() { PetId = 4, Class = "Cica", Type = "Sziámi", Age = 11, ReceptionDate = new DateTime(2010,4,19),
+                                   OwnerId = owner2.OwnerId, ShelterId = shelter1.ShelterId };
+            Pet pet5 = new Pet() { PetId = 5, Class = "Madár", Type = "Papagáj", Age = 1, ReceptionDate = new DateTime(2020,8,23),
+                                   OwnerId = owner1.OwnerId, ShelterId = shelter1.ShelterId };
+            Pet pet6 = new Pet() { PetId = 6, Class = "Madár", Type = "Pinty", Age = 3, ReceptionDate = new DateTime(2018,7,9),
+                                   OwnerId = owner2.OwnerId, ShelterId = shelter2.ShelterId };
 
             modelBuilder.Entity<Owner>().HasData(owner1, owner2);
             modelBuilder.Entity<AnimalShelter>().HasData(shelter1, shelter2);
