@@ -21,7 +21,7 @@ namespace GPA48P_HFT_2021221.Models
 
         public int PhoneNumber { get; set; }
 
-        public int TaxNumber { get; set; }
+        public long TaxNumber { get; set; }
 
         [NotMapped]
         public virtual ICollection<Pet> Pets { get; set; }
