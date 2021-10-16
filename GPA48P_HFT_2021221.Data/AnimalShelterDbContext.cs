@@ -24,7 +24,7 @@ namespace GPA48P_HFT_2021221.Data
             if (!builder.IsConfigured)
             {
                 // a mindenkori munkakönyvtárban lévő lokális adatbázis fájlhoz kapcsolódik
-                string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CarDB.mdf;Integrated Security=True";
+                string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
                 builder.UseLazyLoadingProxies().UseSqlServer(connection);
             }
         }
