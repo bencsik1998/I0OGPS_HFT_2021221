@@ -63,9 +63,9 @@ namespace GPA48P_HFT_2021221.Data
             });
 
             Owner owner1 = new Owner() { OwnerId = 1, FirstName = "János", LastName = "Lézer",
-                                         Address = "1234 ", PhoneNumber = 06302349876 };
+                                         Address = "1234 ", PhoneNumber = 06302349876, };
 
-            Owner owner2 = new Owner() { OwnerId = 1, FirstName = "Béla", LastName = "Vas",
+            Owner owner2 = new Owner() { OwnerId = 2, FirstName = "Béla", LastName = "Vas",
                                          Address = "1234 ", PhoneNumber = 06302349876 };
 
             AnimalShelter shelter1 = new AnimalShelter() { ShelterId = 1, SheltertName = "Menhely Alapítvány",
