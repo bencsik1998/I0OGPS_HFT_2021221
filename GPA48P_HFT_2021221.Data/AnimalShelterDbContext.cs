@@ -66,7 +66,7 @@ namespace GPA48P_HFT_2021221.Data
                                          Address = "1234 ", PhoneNumber = 06302349876 };
 
             Owner owner2 = new Owner() { OwnerId = 2, FirstName = "Béla", LastName = "Vas",
-                                         Address = "1234 ", PhoneNumber = 06302349876 };
+                                         Address = "1234 ", PhoneNumber = 06705331203 };
 
             AnimalShelter shelter1 = new AnimalShelter() { ShelterId = 1, SheltertName = "Menhely Alapítvány",
                                                            Address = "Budapest, Vajdahunyad u. 3, 1082",
