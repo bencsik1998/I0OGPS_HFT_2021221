@@ -78,7 +78,7 @@ namespace GPA48P_HFT_2021221.Data
 
             Pet pet1 = new Pet() { PetId = 1, Class = "Kutya", Type = "Terrier", Age = 4, ReceptionDate = new DateTime(2007,1,30),
                                    OwnerId = owner1.OwnerId, ShelterId = shelter1.ShelterId };
-            Pet pet2 = new Pet() { PetId = 2, Class = "Kutya", Type = "Border Colie", Age = 7, ReceptionDate = new DateTime(2004,3,27),
+            Pet pet2 = new Pet() { PetId = 2, Class = "Kutya", Type = "Border Collie", Age = 7, ReceptionDate = new DateTime(2004,3,27),
                                    OwnerId = owner2.OwnerId, ShelterId = shelter2.ShelterId };
             Pet pet3 = new Pet() { PetId = 3, Class = "Cica", Type = "Ragdoll", Age = 2, ReceptionDate = new DateTime(2019,2,12),
                                    OwnerId = owner1.OwnerId, ShelterId = shelter2.ShelterId };
