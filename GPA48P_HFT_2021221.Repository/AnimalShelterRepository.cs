@@ -44,6 +44,9 @@ namespace GPA48P_HFT_2021221.Repository
         {
             var oldAnimalShelter = Read(animalShelter.ShelterId);
             oldAnimalShelter.SheltertName = animalShelter.SheltertName;
+            oldAnimalShelter.Address = animalShelter.Address;
+            oldAnimalShelter.PhoneNumber = animalShelter.PhoneNumber;
+            oldAnimalShelter.TaxNumber = animalShelter.TaxNumber;
             DataBase.SaveChanges();
         }
     }
