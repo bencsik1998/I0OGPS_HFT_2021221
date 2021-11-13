@@ -32,7 +32,7 @@ namespace GPA48P_HFT_2021221.Repository
 
         public AnimalShelter Read(int shelterId)
         {
-            return DataBase.AnimalShelters.FirstOrDefault(t => t.ShelterId == shelterId);
+            return DataBase.AnimalShelters.FirstOrDefault(a => a.ShelterId == shelterId);
         }
 
         public IQueryable<AnimalShelter> ReadAll()
@@ -43,6 +43,7 @@ namespace GPA48P_HFT_2021221.Repository
         public void Update(AnimalShelter animalShelter)
         {
             var oldAnimalShelter = Read(animalShelter.ShelterId);
+            oldAnimalShelter.ShelterId = animalShelter.ShelterId;
             oldAnimalShelter.SheltertName = animalShelter.SheltertName;
             oldAnimalShelter.Address = animalShelter.Address;
             oldAnimalShelter.PhoneNumber = animalShelter.PhoneNumber;
