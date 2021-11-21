@@ -10,34 +10,34 @@ namespace GPA48P_HFT_2021221.Repository
 {
     public class AnimalShelterRepository : IAnimalShelterRepository
     {
-        AnimalShelterDbContext DataBase;
+        AnimalShelterDbContext dataBase;
 
         public AnimalShelterRepository(AnimalShelterDbContext dataBase)
         {
-            DataBase = dataBase;
+            this.dataBase = dataBase;
         }
 
         public void Create(AnimalShelter animalShelter)
         {
-            DataBase.AnimalShelters.Add(animalShelter);
-            DataBase.SaveChanges();
+            dataBase.AnimalShelters.Add(animalShelter);
+            dataBase.SaveChanges();
         }
 
         public void Delete(int shelterId)
         {
             var animalShelterToDelete = Read(shelterId);
-            DataBase.AnimalShelters.Remove(animalShelterToDelete);
-            DataBase.SaveChanges();
+            dataBase.AnimalShelters.Remove(animalShelterToDelete);
+            dataBase.SaveChanges();
         }
 
         public AnimalShelter Read(int shelterId)
         {
-            return DataBase.AnimalShelters.FirstOrDefault(a => a.ShelterId == shelterId);
+            return dataBase.AnimalShelters.FirstOrDefault(a => a.ShelterId == shelterId);
         }
 
         public IQueryable<AnimalShelter> ReadAll()
         {
-            return DataBase.AnimalShelters;
+            return dataBase.AnimalShelters;
         }
 
         public void Update(AnimalShelter animalShelter)
@@ -48,7 +48,7 @@ namespace GPA48P_HFT_2021221.Repository
             oldAnimalShelter.Address = animalShelter.Address;
             oldAnimalShelter.PhoneNumber = animalShelter.PhoneNumber;
             oldAnimalShelter.TaxNumber = animalShelter.TaxNumber;
-            DataBase.SaveChanges();
+            dataBase.SaveChanges();
         }
     }
 }
