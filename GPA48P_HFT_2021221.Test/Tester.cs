@@ -15,42 +15,84 @@ namespace GPA48P_HFT_2021221.Test
     public class Tester
     {
         AnimalShelterLogic animalShelterLogic;
-        Owner ownerLogic;
-        Pet petLogic;
+        OwnerLogic ownerLogic;
+        PetLogic petLogic;
 
+        [SetUp]
         public void Init()
         {
-            var mockAnimalShelterRepository = new Mock<IAnimalShelterRepository>();
+            var mockPetRepsitory = new Mock<IPetRepository>();
+
+            AnimalShelter fakeShelter = new AnimalShelter();
+            fakeShelter.ShelterId = 1;
+            fakeShelter.SheltertName = "asd";
+            fakeShelter.Address = "1082, Budapest, Anya u. 2";
+            fakeShelter.PhoneNumber = "06209871234";
+            fakeShelter.TaxNumber = "18543221";
+
+            var pets = new List<Pet>()
+            {
+                new Pet()
+                {
+                    PetId = 1,
+                    Class = "Kutya",
+                    Type = "Labrador",
+                    Age = 5,
+                    ReceptionDate = new DateTime(2019,7,13)
+                },
+                new Pet()
+                {
+                    PetId = 2,
+                    Class = "Macska",
+                    Type = "Sziámi",
+                    Age = 8,
+                    ReceptionDate = new DateTime(2018,3,3)
+                }
+            }.AsQueryable();
+
+            mockPetRepsitory.Setup((x) => x.ReadAll()).Returns(pets);
+
+            petLogic = new PetLogic(mockPetRepsitory.Object);
         }
 
         [Test]
         public void Test1()
         {
-            
+            // ACT
+
+            // ASSERT
         }
 
         [Test]
         public void Test2()
         {
+            // ACT
 
+            // ASSERT
         }
 
         [Test]
         public void Test3()
         {
+            // ACT
 
+            // ASSERT
         }
 
         [Test]
         public void Test4()
         {
+            // ACT
 
+            // ASSERT
         }
 
         [Test]
         public void Test5()
         {
+            // ACT
 
+            // ASSERT
         }
     }
 }
