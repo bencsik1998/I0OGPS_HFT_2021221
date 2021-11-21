@@ -10,34 +10,34 @@ namespace GPA48P_HFT_2021221.Repository
 {
     public class OwnerRepository : IOwnerRepository
     {
-        AnimalShelterDbContext DataBase;
+        AnimalShelterDbContext dataBase;
 
         public OwnerRepository(AnimalShelterDbContext dataBase)
         {
-            DataBase = dataBase;
+            this.dataBase = dataBase;
         }
 
         public void Create(Owner owner)
         {
-            DataBase.Owners.Add(owner);
-            DataBase.SaveChanges();
+            dataBase.Owners.Add(owner);
+            dataBase.SaveChanges();
         }
 
         public void Delete(int ownerId)
         {
             var ownerToDelete = Read(ownerId);
-            DataBase.Owners.Remove(ownerToDelete);
-            DataBase.SaveChanges();
+            dataBase.Owners.Remove(ownerToDelete);
+            dataBase.SaveChanges();
         }
 
         public Owner Read(int ownerId)
         {
-            return DataBase.Owners.FirstOrDefault(o => o.OwnerId == ownerId);
+            return dataBase.Owners.FirstOrDefault(o => o.OwnerId == ownerId);
         }
 
         public IQueryable<Owner> ReadAll()
         {
-            return DataBase.Owners;
+            return dataBase.Owners;
         }
 
         public void Update(Owner owner)
@@ -48,7 +48,7 @@ namespace GPA48P_HFT_2021221.Repository
             oldOwner.LastName = owner.LastName;
             oldOwner.Address = owner.Address;
             oldOwner.PhoneNumber = owner.PhoneNumber;
-            DataBase.SaveChanges();
+            dataBase.SaveChanges();
         }
     }
 }
