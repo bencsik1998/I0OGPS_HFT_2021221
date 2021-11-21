@@ -7,16 +7,16 @@ using GPA48P_HFT_2021221.Models;
 
 namespace GPA48P_HFT_2021221.Logic
 {
-    public interface IOwnerLogic
+    public interface IPetLogic
     {
-        void Create(Owner owner);
+        void Create(Pet pet);
 
-        void Delete(int ownerId);
+        void Delete(int petId);
 
-        Owner Read(int ownerId);
+        Pet Read(int petId);
 
-        IEnumerable<Owner> ReadAll();
+        IEnumerable<Pet> ReadAll();
 
-        void Update(Owner owner);
+        void Update(Pet pet);
     }
 }
