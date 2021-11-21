@@ -22,5 +22,35 @@ namespace GPA48P_HFT_2021221.Test
         {
             var mockAnimalShelterRepository = new Mock<IAnimalShelterRepository>();
         }
+
+        [Test]
+        public void Test1()
+        {
+            
+        }
+
+        [Test]
+        public void Test2()
+        {
+
+        }
+
+        [Test]
+        public void Test3()
+        {
+
+        }
+
+        [Test]
+        public void Test4()
+        {
+
+        }
+
+        [Test]
+        public void Test5()
+        {
+
+        }
     }
 }
