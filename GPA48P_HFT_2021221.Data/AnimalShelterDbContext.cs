@@ -89,8 +89,8 @@ namespace GPA48P_HFT_2021221.Data
             Owner owner3 = new Owner()
             {
                 OwnerId = 3,
-                FirstName = "Béla",
-                LastName = "Vas",
+                FirstName = "Sándor",
+                LastName = "Erős",
                 Address = "Debrecen, Zöld u. 9, 4000",
                 PhoneNumber = 06704339812
             };
@@ -176,7 +176,7 @@ namespace GPA48P_HFT_2021221.Data
             {
                 PetId = 5,
                 Class = "Kutya",
-                Type = "Papagáj",
+                Type = "Bernáthegyi",
                 Age = 1, ReceptionDate = new DateTime(2020,8,23),
                 OwnerId = owner3.OwnerId,
                 ShelterId = shelter3.ShelterId
@@ -186,7 +186,7 @@ namespace GPA48P_HFT_2021221.Data
             {
                 PetId = 6,
                 Class = "Macska",
-                Type = "Pinty",
+                Type = "Bengáli",
                 Age = 3,
                 ReceptionDate = new DateTime(2018,7,9),
                 OwnerId = owner1.OwnerId,
@@ -199,7 +199,7 @@ namespace GPA48P_HFT_2021221.Data
                 Class = "Kutya",
                 Type = "Rottweiler",
                 Age = 7,
-                ReceptionDate = new DateTime(2016, 3, 12),
+                ReceptionDate = new DateTime(2014, 3, 12),
                 OwnerId = owner2.OwnerId,
                 ShelterId = shelter1.ShelterId
             };
