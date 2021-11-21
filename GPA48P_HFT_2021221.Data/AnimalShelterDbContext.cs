@@ -88,7 +88,7 @@ namespace GPA48P_HFT_2021221.Data
 
             Owner owner3 = new Owner()
             {
-                OwnerId = 2,
+                OwnerId = 3,
                 FirstName = "Béla",
                 LastName = "Vas",
                 Address = "Debrecen, Zöld u. 9, 4000",
