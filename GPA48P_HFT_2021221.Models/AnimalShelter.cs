@@ -15,12 +15,16 @@ namespace GPA48P_HFT_2021221.Models
 
         public int ShelterId { get; set; }
 
+        [Required]
         public string SheltertName { get; set; }
 
+        [Required]
         public string Address { get; set; }
 
+        [Required]
         public long PhoneNumber { get; set; }
 
+        [Required]
         public long TaxNumber { get; set; }
 
         [NotMapped]

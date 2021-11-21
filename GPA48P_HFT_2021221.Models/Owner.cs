@@ -15,12 +15,16 @@ namespace GPA48P_HFT_2021221.Models
 
         public int OwnerId { get; set; }
 
+        [Required]
         public string FirstName { get; set; }
 
+        [Required]
         public string LastName { get; set; }
 
+        [Required]
         public string Address { get; set; }
 
+        [Required]
         public long PhoneNumber { get; set; }
 
         [NotMapped]

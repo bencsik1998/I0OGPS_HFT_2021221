@@ -15,10 +15,13 @@ namespace GPA48P_HFT_2021221.Models
 
         public int PetId { get; set; }
 
+        [Required]
         public string Class { get; set; }
 
+        [Required]
         public string Type { get; set; }
 
+        [Required]
         public int Age { get; set; }
 
         public DateTime ReceptionDate { get; set; }
