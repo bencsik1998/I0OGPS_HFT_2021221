@@ -19,9 +19,25 @@ namespace GPA48P_HFT_2021221.Logic
 
         public void Create(AnimalShelter animalShelter)
         {
-            if (animalShelter.SheltertName.Length < 5)
+            if (animalShelter.SheltertName == "")
+            {
+                throw new Exception("A menhely neve nem lehet üres!");
+            }
+            else if (animalShelter.SheltertName.Length < 5)
             {
                 throw new Exception("A menhely neve legalább 5 karakter hosszúságú legyen!");
+            }
+            else if (animalShelter.Address == "")
+            {
+                throw new Exception("A menhely címe nem lehet üres!");
+            }
+            else if (animalShelter.PhoneNumber == 0)
+            {
+                throw new Exception("A menhely telefonszáma nem lehet nulla!");
+            }
+            else if (animalShelter.PhoneNumber == 0)
+            {
+                throw new Exception("A menhely telefonszáma nem lehet nulla!");
             }
             animalShelterRepository.Create(animalShelter);
         }

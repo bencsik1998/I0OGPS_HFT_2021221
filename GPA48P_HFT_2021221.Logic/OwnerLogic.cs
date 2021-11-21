@@ -19,9 +19,21 @@ namespace GPA48P_HFT_2021221.Logic
 
         public void Create(Owner owner)
         {
-            if (owner.FirstName.Length < 3 && owner.LastName.Length < 3)
+            if (owner.FirstName == "" && owner.LastName == "")
+            {
+                throw new Exception("A kereszt- és vezetéknév nem lehet üres!");
+            }
+            else if (owner.FirstName.Length < 3 && owner.LastName.Length < 3)
             {
                 throw new Exception("A kereszt- és vezetéknév nem lehet 3 karakternél rövidebb!");
+            }
+            else if (owner.Address == "")
+            {
+                throw new Exception("A cím nem lehet üres!");
+            }
+            else if (owner.PhoneNumber == 0)
+            {
+                throw new Exception("A telefonszám nem lehet nulla!");
             }
             ownerRepository.Create(owner);
         }
