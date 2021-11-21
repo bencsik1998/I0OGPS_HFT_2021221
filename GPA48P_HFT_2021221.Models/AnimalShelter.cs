@@ -19,7 +19,7 @@ namespace GPA48P_HFT_2021221.Models
 
         public string Address { get; set; }
 
-        public int PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
 
         public long TaxNumber { get; set; }
 
