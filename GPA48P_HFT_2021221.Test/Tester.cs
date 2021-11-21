@@ -14,8 +14,6 @@ namespace GPA48P_HFT_2021221.Test
     [TestFixture]
     public class Tester
     {
-        AnimalShelterLogic animalShelterLogic;
-        OwnerLogic ownerLogic;
         PetLogic petLogic;
 
         [SetUp]
@@ -37,7 +35,7 @@ namespace GPA48P_HFT_2021221.Test
                     PetId = 1,
                     Class = "Kutya",
                     Type = "Labrador",
-                    Age = 5,
+                    Age =2,
                     ReceptionDate = new DateTime(2019,7,13)
                 },
                 new Pet()
@@ -56,11 +54,13 @@ namespace GPA48P_HFT_2021221.Test
         }
 
         [Test]
-        public void Test1()
+        public void AvarageAgeTest()
         {
             // ACT
+            var avgResult = petLogic.AvarageAge();
 
             // ASSERT
+            Assert.That(avgResult, Is.EqualTo(5));
         }
 
         [Test]
