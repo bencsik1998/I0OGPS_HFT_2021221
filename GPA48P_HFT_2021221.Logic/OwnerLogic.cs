@@ -10,11 +10,11 @@ namespace GPA48P_HFT_2021221.Logic
 {
     public class OwnerLogic : IOwnerLogic
     {
-        IOwnerRepository OwnerRepository;
+        IOwnerRepository ownerRepository;
 
         public OwnerLogic(IOwnerRepository ownerRepository)
         {
-            OwnerRepository = ownerRepository;   
+            this.ownerRepository = ownerRepository;   
         }
 
         public void Create(Owner owner)
@@ -23,27 +23,27 @@ namespace GPA48P_HFT_2021221.Logic
             {
                 throw new Exception("A kereszt- és vezetéknév nem lehet 3 karakternél rövidebb!");
             }
-            OwnerRepository.Create(owner);
+            ownerRepository.Create(owner);
         }
 
         public void Delete(int ownerId)
         {
-            OwnerRepository.Delete(ownerId);
+            ownerRepository.Delete(ownerId);
         }
 
         public Owner Read(int ownerId)
         {
-            return OwnerRepository.Read(ownerId);
+            return ownerRepository.Read(ownerId);
         }
 
         public IEnumerable<Owner> ReadAll()
         {
-            return OwnerRepository.ReadAll();
+            return ownerRepository.ReadAll();
         }
 
         public void Update(Owner owner)
         {
-            OwnerRepository.Update(owner);
+            ownerRepository.Update(owner);
         }
     }
 }
