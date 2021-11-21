@@ -12,7 +12,6 @@ namespace GPA48P_HFT_2021221.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
         public int PetId { get; set; }
 
         [Required]
