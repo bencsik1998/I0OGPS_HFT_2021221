@@ -74,7 +74,8 @@ namespace GPA48P_HFT_2021221.Data
                 FirstName = "János",
                 LastName = "Lézer",
                 Address = "Székesfehérvár, Fekete u. 1, 8000",
-                PhoneNumber = 06202349876
+                PhoneNumber = "06202349876",
+                Age = 18
             };
 
             Owner owner2 = new Owner()
@@ -83,7 +84,8 @@ namespace GPA48P_HFT_2021221.Data
                 FirstName = "Béla",
                 LastName = "Vas",
                 Address = "Győr, Fehér u. 15, 9000",
-                PhoneNumber = 06305331203
+                PhoneNumber = "06305331203",
+                Age = 35
             };
 
             Owner owner3 = new Owner()
@@ -92,7 +94,8 @@ namespace GPA48P_HFT_2021221.Data
                 FirstName = "Sándor",
                 LastName = "Erős",
                 Address = "Debrecen, Zöld u. 9, 4000",
-                PhoneNumber = 06704339812
+                PhoneNumber = "06704339812",
+                Age = 56
             };
 
             //---------------------
@@ -104,8 +107,8 @@ namespace GPA48P_HFT_2021221.Data
                 ShelterId = 1,
                 SheltertName = "Menhely Alapítvány",
                 Address = "Budapest, Vajdahunyad u. 3, 1082",
-                PhoneNumber = 06202349876,
-                TaxNumber = 19013213142
+                PhoneNumber = "06202349876",
+                TaxNumber = "19013213142"
             };
             
             AnimalShelter shelter2 = new AnimalShelter()
@@ -113,8 +116,8 @@ namespace GPA48P_HFT_2021221.Data
                 ShelterId = 2,
                 SheltertName = "Állatmentő Sereg",
                 Address = "Budapest, Nagymező u. 8, 1065",
-                PhoneNumber = 06304564321,
-                TaxNumber = 18334461142
+                PhoneNumber = "06304564321",
+                TaxNumber = "18334461142"
             };
 
             AnimalShelter shelter3 = new AnimalShelter()
@@ -122,8 +125,8 @@ namespace GPA48P_HFT_2021221.Data
                 ShelterId = 3,
                 SheltertName = "Cicamentő angyalok",
                 Address = "Budapest, Lipót u. 12, 1074",
-                PhoneNumber = 06709871234,
-                TaxNumber = 17816385193
+                PhoneNumber = "06709871234",
+                TaxNumber = "17816385193"
             };
 
             //----------

@@ -31,9 +31,9 @@ namespace GPA48P_HFT_2021221.Logic
             {
                 throw new Exception("A cím nem lehet üres!");
             }
-            else if (owner.PhoneNumber == 0)
+            else if (owner.PhoneNumber == "")
             {
-                throw new Exception("A telefonszám nem lehet nulla!");
+                throw new Exception("A telefonszám nem lehet üres!");
             }
             ownerRepository.Create(owner);
         }

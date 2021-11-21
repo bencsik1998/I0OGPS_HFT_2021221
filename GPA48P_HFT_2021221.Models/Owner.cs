@@ -24,7 +24,10 @@ namespace GPA48P_HFT_2021221.Models
         public string Address { get; set; }
 
         [Required]
-        public long PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        public int Age { get; set; }
 
         [NotMapped]
         public virtual ICollection<Pet> Pets { get; set; }

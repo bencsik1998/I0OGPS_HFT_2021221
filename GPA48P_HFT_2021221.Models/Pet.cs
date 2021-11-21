@@ -23,6 +23,7 @@ namespace GPA48P_HFT_2021221.Models
         [Required]
         public int Age { get; set; }
 
+        [Required]
         public DateTime ReceptionDate { get; set; }
 
         public virtual Owner Owner { get; set; }

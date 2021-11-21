@@ -31,13 +31,13 @@ namespace GPA48P_HFT_2021221.Logic
             {
                 throw new Exception("A menhely címe nem lehet üres!");
             }
-            else if (animalShelter.PhoneNumber == 0)
+            else if (animalShelter.PhoneNumber == "")
             {
-                throw new Exception("A menhely telefonszáma nem lehet nulla!");
+                throw new Exception("A menhely telefonszáma nem lehet üres!");
             }
-            else if (animalShelter.PhoneNumber == 0)
+            else if (animalShelter.TaxNumber == "")
             {
-                throw new Exception("A menhely telefonszáma nem lehet nulla!");
+                throw new Exception("A menhely adószáma nem lehet üres!");
             }
             animalShelterRepository.Create(animalShelter);
         }

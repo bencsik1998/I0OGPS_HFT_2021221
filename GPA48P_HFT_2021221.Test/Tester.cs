@@ -14,6 +14,13 @@ namespace GPA48P_HFT_2021221.Test
     [TestFixture]
     public class Tester
     {
+        AnimalShelterLogic animalShelterLogic;
+        Owner ownerLogic;
+        Pet petLogic;
 
+        public void Init()
+        {
+            var mockAnimalShelterRepository = new Mock<IAnimalShelterRepository>();
+        }
     }
 }

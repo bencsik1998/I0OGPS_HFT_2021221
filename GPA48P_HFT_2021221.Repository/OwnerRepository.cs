@@ -48,6 +48,7 @@ namespace GPA48P_HFT_2021221.Repository
             oldOwner.LastName = owner.LastName;
             oldOwner.Address = owner.Address;
             oldOwner.PhoneNumber = owner.PhoneNumber;
+            oldOwner.Age = owner.Age;
             dataBase.SaveChanges();
         }
     }
