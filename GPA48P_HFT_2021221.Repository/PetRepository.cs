@@ -10,34 +10,34 @@ namespace GPA48P_HFT_2021221.Repository
 {
     public class PetRepository : IPetRepository
     {
-        AnimalShelterDbContext DataBase;
+        AnimalShelterDbContext dataBase;
 
         public PetRepository(AnimalShelterDbContext dataBase)
         {
-            DataBase = dataBase;
+            this.dataBase = dataBase;
         }
 
         public void Create(Pet pet)
         {
-            DataBase.Pets.Add(pet);
-            DataBase.SaveChanges();
+            dataBase.Pets.Add(pet);
+            dataBase.SaveChanges();
         }
 
         public void Delete(int petId)
         {
             var petToDelete = Read(petId);
-            DataBase.Pets.Remove(petToDelete);
-            DataBase.SaveChanges();
+            dataBase.Pets.Remove(petToDelete);
+            dataBase.SaveChanges();
         }
 
         public Pet Read(int petId)
         {
-            return DataBase.Pets.FirstOrDefault(p => p.PetId == petId);
+            return dataBase.Pets.FirstOrDefault(p => p.PetId == petId);
         }
 
         public IQueryable<Pet> ReadAll()
         {
-            return DataBase.Pets;
+            return dataBase.Pets;
         }
 
         public void Update(Pet pet)
@@ -47,7 +47,7 @@ namespace GPA48P_HFT_2021221.Repository
             oldPet.Type = pet.Type;
             oldPet.Age = pet.Age;
             oldPet.ReceptionDate = pet.ReceptionDate;
-            DataBase.SaveChanges();
+            dataBase.SaveChanges();
         }
     }
 }

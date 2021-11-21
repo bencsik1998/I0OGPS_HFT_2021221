@@ -10,11 +10,11 @@ namespace GPA48P_HFT_2021221.Logic
 {
     public class AnimalShelterLogic : IAnimalShelterLogic
     {
-        IAnimalShelterRepository AnimalShelterRepository;
+        IAnimalShelterRepository animalShelterRepository;
 
         public AnimalShelterLogic(IAnimalShelterRepository animalShelterRepository)
         {
-            AnimalShelterRepository = animalShelterRepository;
+            this.animalShelterRepository = animalShelterRepository;
         }
 
         public void Create(AnimalShelter animalShelter)
@@ -23,27 +23,27 @@ namespace GPA48P_HFT_2021221.Logic
             {
                 throw new Exception("A menhely neve legalább 5 karakter hosszúságú legyen!");
             }
-            AnimalShelterRepository.Create(animalShelter);
+            animalShelterRepository.Create(animalShelter);
         }
 
         public void Delete(int shelterId)
         {
-            AnimalShelterRepository.Delete(shelterId);
+            animalShelterRepository.Delete(shelterId);
         }
 
         public AnimalShelter Read(int shelterId)
         {
-            return AnimalShelterRepository.Read(shelterId);
+            return animalShelterRepository.Read(shelterId);
         }
 
         public IEnumerable<AnimalShelter> ReadAll()
         {
-            return AnimalShelterRepository.ReadAll();
+            return animalShelterRepository.ReadAll();
         }
 
         public void Update(AnimalShelter animalShelter)
         {
-            AnimalShelterRepository.Update(animalShelter);
+            animalShelterRepository.Update(animalShelter);
         }
     }
 }
