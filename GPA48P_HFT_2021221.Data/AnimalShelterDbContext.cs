@@ -16,7 +16,7 @@ namespace GPA48P_HFT_2021221.Data
 
         public AnimalShelterDbContext()
         {
-            Database.EnsureCreated();
+            this.Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
