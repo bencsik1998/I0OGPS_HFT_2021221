@@ -59,5 +59,11 @@ namespace GPA48P_HFT_2021221.Logic
         {
             return petRepository.ReadAll().Average(p => p.Age);
         }
+
+        // Ide még kell egy többtáblás non-crud
+        public void Valami()
+        {
+
+        }
     }
 }

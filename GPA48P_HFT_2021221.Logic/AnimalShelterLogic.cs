@@ -79,16 +79,17 @@ namespace GPA48P_HFT_2021221.Logic
             }
         }
 
-        public IEnumerable<object> AvarageAgeOfDogsAtAllShelters()
+        public IEnumerable<AvarageAgeOfDogsAtAllShelters> AvarageAgeOfDogsAtAllShelters()
         {
             var result = animalShelterRepository.ReadAll()
                                                 .Select(x =>
-                                                    new
+                                                    new AvarageAgeOfDogsAtAllShelters
                                                     {
                                                         ShelterName = x.SheltertName,
                                                         AvarageAge = x.Pets.Where(y => y.Class
-                                                            .Equals("Kutya"))
-                                                        .Average(y => y.Age)
+                                                            .Equals("Kutya")).Count()==0 ?0:
+                                                        x.Pets.Where(y => y.Class
+                                                            .Equals("Kutya")).Average(y => y.Age)
                                                     });
             return result;
         }

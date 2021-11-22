@@ -87,7 +87,7 @@ namespace GPA48P_HFT_2021221.Logic
                                             .Where(y => y.Class
                                                 .Equals("Macska"))
                                             .Count())
-                                        .First();
+                                        .Last();
             return result;
         }
     }

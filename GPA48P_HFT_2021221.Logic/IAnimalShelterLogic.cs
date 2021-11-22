@@ -18,5 +18,7 @@ namespace GPA48P_HFT_2021221.Logic
         IEnumerable<AnimalShelter> ReadAll();
 
         void Update(AnimalShelter animalShelter);
+
+        IEnumerable<AvarageAgeOfDogsAtAllShelters> AvarageAgeOfDogsAtAllShelters();
     }
 }
