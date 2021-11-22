@@ -19,7 +19,7 @@ namespace GPA48P_HFT_2021221.Logic
 
         public void Create(AnimalShelter animalShelter)
         {
-            if (animalShelter.SheltertName == "")
+            if (animalShelter.SheltertName is null || animalShelter.SheltertName == "")
             {
                 throw new Exception("A menhely neve nem lehet üres!");
             }
@@ -27,15 +27,15 @@ namespace GPA48P_HFT_2021221.Logic
             {
                 throw new Exception("A menhely neve legalább 5 karakter hosszúságú legyen!");
             }
-            else if (animalShelter.Address == "")
+            else if (animalShelter.Address is null || animalShelter.Address == "")
             {
                 throw new Exception("A menhely címe nem lehet üres!");
             }
-            else if (animalShelter.PhoneNumber == "")
+            else if (animalShelter.PhoneNumber is null || animalShelter.PhoneNumber == "")
             {
                 throw new Exception("A menhely telefonszáma nem lehet üres!");
             }
-            else if (animalShelter.TaxNumber == "")
+            else if (animalShelter.TaxNumber is null || animalShelter.TaxNumber == "")
             {
                 throw new Exception("A menhely adószáma nem lehet üres!");
             }
@@ -60,6 +60,37 @@ namespace GPA48P_HFT_2021221.Logic
         public void Update(AnimalShelter animalShelter)
         {
             animalShelterRepository.Update(animalShelter);
+        }
+
+        public double AvarageAgeByPetsAtOneShelter(int shelterId)
+        {
+            try
+            {
+                var result = animalShelterRepository.ReadAll()
+                                                .SingleOrDefault(x => x.ShelterId
+                                                    .Equals(shelterId))
+                                                .Pets.Average(x => x.Age);
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public IEnumerable<object> AvarageAgeOfDogsAtAllShelters()
+        {
+            var result = animalShelterRepository.ReadAll()
+                                                .Select(x =>
+                                                    new
+                                                    {
+                                                        ShelterName = x.SheltertName,
+                                                        AvarageAge = x.Pets.Where(y => y.Class
+                                                            .Equals("Kutya"))
+                                                        .Average(y => y.Age)
+                                                    });
+            return result;
         }
     }
 }

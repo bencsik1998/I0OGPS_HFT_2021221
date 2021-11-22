@@ -23,9 +23,13 @@ namespace GPA48P_HFT_2021221.Logic
             {
                 throw new Exception("A kisállat kora nem lehet kisebb egynél!");
             }
-            else if (pet.Class == "" && pet.Type == "")
+            else if (pet.Class is null || pet.Class == "")
             {
                 throw new Exception("A kisállat osztály és típus besorolása nem lehet üres!");
+            }
+            else if (pet.Type is null || pet.Type == "")
+            {
+                throw new Exception("A kisállat típusa nem lehet üres!");
             }
             petRepository.Create(pet);
         }
