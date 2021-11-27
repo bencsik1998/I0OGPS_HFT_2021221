@@ -35,7 +35,7 @@ namespace GPA48P_HFT_2021221.Repository
             return dataBase.Owners.FirstOrDefault(o => o.OwnerId == ownerId);
         }
 
-        public IQueryable<Owner> ReadAll()
+        public IQueryable<Owner> GetAll()
         {
             return dataBase.Owners;
         }

@@ -15,7 +15,7 @@ namespace GPA48P_HFT_2021221.Repository
 
         Owner Read(int ownerId);
 
-        IQueryable<Owner> ReadAll();
+        IQueryable<Owner> GetAll();
 
         void Update(Owner owner);
     }

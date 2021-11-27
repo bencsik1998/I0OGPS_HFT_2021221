@@ -35,7 +35,7 @@ namespace GPA48P_HFT_2021221.Repository
             return dataBase.Pets.FirstOrDefault(p => p.PetId == petId);
         }
 
-        public IQueryable<Pet> ReadAll()
+        public IQueryable<Pet> GetAll()
         {
             return dataBase.Pets;
         }

@@ -15,7 +15,7 @@ namespace GPA48P_HFT_2021221.Repository
 
         Pet Read(int petId);
 
-        IQueryable<Pet> ReadAll();
+        IQueryable<Pet> GetAll();
 
         void Update(Pet pet);
     }

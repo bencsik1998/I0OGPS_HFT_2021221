@@ -24,7 +24,7 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
         [HttpGet]
         public IEnumerable<Owner> Get()
         {
-            return ol.ReadAll();
+            return ol.GetAll();
         }
 
         // GET /owner/id

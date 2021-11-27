@@ -15,7 +15,7 @@ namespace GPA48P_HFT_2021221.Logic
 
         Owner Read(int ownerId);
 
-        IEnumerable<Owner> ReadAll();
+        IEnumerable<Owner> GetAll();
 
         void Update(Owner owner);
     }

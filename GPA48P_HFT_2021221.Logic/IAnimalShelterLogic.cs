@@ -15,7 +15,7 @@ namespace GPA48P_HFT_2021221.Logic
 
         AnimalShelter Read(int shelterId);
 
-        IEnumerable<AnimalShelter> ReadAll();
+        IEnumerable<AnimalShelter> GetAll();
 
         void Update(AnimalShelter animalShelter);
 

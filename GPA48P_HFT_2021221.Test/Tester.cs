@@ -109,9 +109,9 @@ namespace GPA48P_HFT_2021221.Test
                 }
             };
 
-            mockAnimalShelterRepository.Setup((x) => x.ReadAll()).Returns(animalShelters);
-            mockOwnerRepository.Setup((x) => x.ReadAll()).Returns(owners);
-            mockPetRepsitory.Setup((x) => x.ReadAll()).Returns(pets);
+            mockAnimalShelterRepository.Setup((x) => x.GetAll()).Returns(animalShelters);
+            mockOwnerRepository.Setup((x) => x.GetAll()).Returns(owners);
+            mockPetRepsitory.Setup((x) => x.GetAll()).Returns(pets);
 
             animalShelterLogic = new AnimalShelterLogic(mockAnimalShelterRepository.Object);
             ownerLogic = new OwnerLogic(mockOwnerRepository.Object);

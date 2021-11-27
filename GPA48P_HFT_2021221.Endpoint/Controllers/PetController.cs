@@ -24,7 +24,7 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
         [HttpGet]
         public IEnumerable<Pet> Get()
         {
-            return pl.ReadAll();
+            return pl.GetAll();
         }
 
         // GET /pet/id

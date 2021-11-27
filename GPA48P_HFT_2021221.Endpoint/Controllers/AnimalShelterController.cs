@@ -24,7 +24,7 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
         [HttpGet]
         public IEnumerable<AnimalShelter> Get()
         {
-            return asl.ReadAll();
+            return asl.GetAll();
         }
 
         // GET /animalShelter/id

@@ -15,7 +15,7 @@ namespace GPA48P_HFT_2021221.Logic
 
         Pet Read(int petId);
 
-        IEnumerable<Pet> ReadAll();
+        IEnumerable<Pet> GetAll();
 
         void Update(Pet pet);
     }

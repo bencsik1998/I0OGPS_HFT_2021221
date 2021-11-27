@@ -35,7 +35,7 @@ namespace GPA48P_HFT_2021221.Repository
             return dataBase.AnimalShelters.FirstOrDefault(a => a.ShelterId == shelterId);
         }
 
-        public IQueryable<AnimalShelter> ReadAll()
+        public IQueryable<AnimalShelter> GetAll()
         {
             return dataBase.AnimalShelters;
         }

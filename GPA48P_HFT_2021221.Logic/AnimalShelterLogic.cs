@@ -52,9 +52,9 @@ namespace GPA48P_HFT_2021221.Logic
             return animalShelterRepository.Read(shelterId);
         }
 
-        public IEnumerable<AnimalShelter> ReadAll()
+        public IEnumerable<AnimalShelter> GetAll()
         {
-            return animalShelterRepository.ReadAll();
+            return animalShelterRepository.GetAll();
         }
 
         public void Update(AnimalShelter animalShelter)
@@ -66,7 +66,7 @@ namespace GPA48P_HFT_2021221.Logic
         {
             try
             {
-                var result = animalShelterRepository.ReadAll()
+                var result = animalShelterRepository.GetAll()
                                                 .SingleOrDefault(x => x.ShelterId
                                                     .Equals(shelterId))
                                                 .Pets.Average(x => x.Age);
@@ -81,7 +81,7 @@ namespace GPA48P_HFT_2021221.Logic
 
         public IEnumerable<AvarageAgeOfDogsAtAllShelters> AvarageAgeOfDogsAtAllShelters()
         {
-            var result = animalShelterRepository.ReadAll()
+            var result = animalShelterRepository.GetAll()
                                                 .Select(x =>
                                                     new AvarageAgeOfDogsAtAllShelters
                                                     {

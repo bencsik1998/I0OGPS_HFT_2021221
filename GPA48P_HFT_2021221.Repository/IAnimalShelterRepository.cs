@@ -15,7 +15,7 @@ namespace GPA48P_HFT_2021221.Repository
 
         AnimalShelter Read(int shelterId);
 
-        IQueryable<AnimalShelter> ReadAll();
+        IQueryable<AnimalShelter> GetAll();
 
         void Update(AnimalShelter animalShelter);
     }

@@ -44,9 +44,9 @@ namespace GPA48P_HFT_2021221.Logic
             return petRepository.Read(petId);
         }
 
-        public IEnumerable<Pet> ReadAll()
+        public IEnumerable<Pet> GetAll()
         {
-            return petRepository.ReadAll();
+            return petRepository.GetAll();
         }
 
         public void Update(Pet pet)
@@ -57,7 +57,7 @@ namespace GPA48P_HFT_2021221.Logic
         // NON-CRUD, 1 táblás, tesztelés miatt
         public double AvarageAge()
         {
-            return petRepository.ReadAll().Average(p => p.Age);
+            return petRepository.GetAll().Average(p => p.Age);
         }
 
         // Ide még kell egy többtáblás non-crud

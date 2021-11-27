@@ -52,9 +52,9 @@ namespace GPA48P_HFT_2021221.Logic
             return ownerRepository.Read(ownerId);
         }
 
-        public IEnumerable<Owner> ReadAll()
+        public IEnumerable<Owner> GetAll()
         {
-            return ownerRepository.ReadAll();
+            return ownerRepository.GetAll();
         }
 
         public void Update(Owner owner)
@@ -66,7 +66,7 @@ namespace GPA48P_HFT_2021221.Logic
         {
             try
             {
-                var result = ownerRepository.ReadAll()
+                var result = ownerRepository.GetAll()
                                             .SingleOrDefault(x => x.OwnerId
                                                 .Equals(ownerId))
                                             .Pets.Where(x => x.Class
@@ -82,7 +82,7 @@ namespace GPA48P_HFT_2021221.Logic
 
         public Owner MostCatsAdoptedBy()
         {
-            var result = ownerRepository.ReadAll()
+            var result = ownerRepository.GetAll()
                                         .OrderBy(x => x.Pets
                                             .Where(y => y.Class
                                                 .Equals("Macska"))
