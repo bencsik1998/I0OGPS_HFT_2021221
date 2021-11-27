@@ -1,11 +1,7 @@
 ﻿using GPA48P_HFT_2021221.Models;
-using GPA48P_HFT_2021221.Repository;
 using GPA48P_HFT_2021221.Logic;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GPA48P_HFT_2021221.Endpoint.Controllers
 {

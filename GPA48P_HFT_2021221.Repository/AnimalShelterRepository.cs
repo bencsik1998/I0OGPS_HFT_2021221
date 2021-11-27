@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using GPA48P_HFT_2021221.Data;
 using GPA48P_HFT_2021221.Models;
 
