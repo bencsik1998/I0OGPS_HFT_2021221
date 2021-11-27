@@ -3,13 +3,14 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:62480",
+      "applicationUrl": "http://localhost:3445", // original port: 62480
       "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
+      "launchUrl": "animalShelter",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
@@ -17,6 +18,7 @@
     },
     "GPA48P_HFT_2021221.Endpoint": {
       "commandName": "Project",
+      "launchUrl": "animalShelter",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5000",
