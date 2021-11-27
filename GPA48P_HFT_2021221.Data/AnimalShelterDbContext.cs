@@ -38,7 +38,7 @@ namespace GPA48P_HFT_2021221.Data
                 entity
                 .HasMany(owner => owner.Pets)
                 .WithOne(pet => pet.Owner)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<AnimalShelter>(entity =>
@@ -46,7 +46,7 @@ namespace GPA48P_HFT_2021221.Data
                 entity
                 .HasMany(shelter => shelter.Pets)
                 .WithOne(pet => pet.AnimalShelter)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Pet>(entity =>
@@ -55,13 +55,13 @@ namespace GPA48P_HFT_2021221.Data
                 .HasOne(pet => pet.Owner)
                 .WithMany(owner => owner.Pets)
                 .HasForeignKey(pet => pet.OwnerId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity
                 .HasOne(pet => pet.AnimalShelter)
                 .WithMany(shelter => shelter.Pets)
                 .HasForeignKey(pet => pet.ShelterId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             //-----------
