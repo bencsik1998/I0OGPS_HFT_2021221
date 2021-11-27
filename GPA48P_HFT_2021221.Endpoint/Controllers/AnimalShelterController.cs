@@ -28,29 +28,32 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             return asl.ReadAll();
         }
 
-        // GET api/<AnimalShelterController>/5
+        // GET /animalShelter/id
         [HttpGet("{id}")]
-        public string Get(int id)
+        public AnimalShelter Get(int id)
         {
-            return "value";
+            return asl.Read(id);
         }
 
-        // POST api/<AnimalShelterController>
+        // POST /animalShelter
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] AnimalShelter value)
         {
+            asl.Create(value);
         }
 
-        // PUT api/<AnimalShelterController>/5
+        // PUT /animalShelter
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put([FromBody] AnimalShelter value)
         {
+            asl.Update(value);
         }
 
-        // DELETE api/<AnimalShelterController>/5
+        // DELETE /animalShelter/id
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            asl.Delete(id);
         }
     }
 }
