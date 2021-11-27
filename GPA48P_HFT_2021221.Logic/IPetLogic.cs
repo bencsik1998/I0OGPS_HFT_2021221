@@ -14,5 +14,9 @@ namespace GPA48P_HFT_2021221.Logic
         IEnumerable<Pet> GetAll();
 
         void Update(Pet pet);
+
+        double AvarageAge();
+
+        public void Valami();
     }
 }

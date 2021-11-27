@@ -14,5 +14,9 @@ namespace GPA48P_HFT_2021221.Logic
         IEnumerable<Owner> GetAll();
 
         void Update(Owner owner);
+
+        IEnumerable<Pet> DogsOfOwner(int ownerId);
+
+        Owner MostCatsAdoptedBy();
     }
 }
