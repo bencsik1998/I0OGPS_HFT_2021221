@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GPA48P_HFT_2021221.Models
@@ -26,8 +27,12 @@ namespace GPA48P_HFT_2021221.Models
         [Required]
         public DateTime ReceptionDate { get; set; }
 
+        [NotMapped]
+        [JsonIgnore]
         public virtual Owner Owner { get; set; }
 
+        [NotMapped]
+        [JsonIgnore]
         public virtual AnimalShelter AnimalShelter { get; set; }
 
         [ForeignKey(nameof(Owner))]

@@ -28,6 +28,7 @@ namespace GPA48P_HFT_2021221.Models
         public string TaxNumber { get; set; }
 
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<Pet> Pets { get; set; }
 
         public AnimalShelter()
