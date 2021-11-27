@@ -24,11 +24,9 @@ namespace GPA48P_HFT_2021221.Models
         public DateTime ReceptionDate { get; set; }
 
         [NotMapped]
-        [JsonIgnore]
         public virtual Owner Owner { get; set; }
 
         [NotMapped]
-        [JsonIgnore]
         public virtual AnimalShelter AnimalShelter { get; set; }
 
         [ForeignKey(nameof(Owner))]
