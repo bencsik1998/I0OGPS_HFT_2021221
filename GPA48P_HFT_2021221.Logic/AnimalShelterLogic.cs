@@ -87,7 +87,7 @@ namespace GPA48P_HFT_2021221.Logic
                                                     {
                                                         ShelterName = x.SheltertName,
                                                         AvarageAge = x.Pets.Where(y => y.Class
-                                                            .Equals("Kutya")).Count()==0 ?0:
+                                                            .Equals("Kutya")).Count()==0 ?0:   // ha 0, akkor nincs kutya, egyébként tovább
                                                         x.Pets.Where(y => y.Class
                                                             .Equals("Kutya")).Average(y => y.Age)
                                                     });
