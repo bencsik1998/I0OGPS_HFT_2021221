@@ -37,7 +37,7 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             asl.Create(value);
         }
 
-        // PUT /animalShelter
+        // PUT /animalShelter/id
         [HttpPut("{id}")]
         public void Put([FromBody] AnimalShelter value)
         {
