@@ -116,6 +116,7 @@ namespace GPA48P_HFT_2021221.Test
             petLogic = new PetLogic(mockPetRepsitory.Object);
         }
 
+        // Teszt 1
         [Test]
         public void AvarageAgeTest()
         {
@@ -126,6 +127,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result, Is.EqualTo(7));
         }
 
+        // Teszt 2
         [Test]
         public void AvarageAgeByPetsAtOneShelterTest()
         {
@@ -136,6 +138,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result, Is.EqualTo(4));
         }
 
+        // Teszt 3
         [Test]
         public void AvarageAgeOfDogsAtAllShelters()
         {
@@ -146,6 +149,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.IsTrue(CompareElement(result, AvarageAgeOfDogsAtAllSheltersList));
         }
 
+        // Menhelyek és kutya átlagéletkor összehasonlító segédmetódus teszthez
         private bool CompareElement(IEnumerable<AvarageAgeOfDogsAtAllShelters> e, IEnumerable<AvarageAgeOfDogsAtAllShelters> l)
         {
             if (e.Count() != l.Count())
@@ -166,6 +170,7 @@ namespace GPA48P_HFT_2021221.Test
             return false;
         }
 
+        // Teszt 4
         [Test]
         public void DogsOfOwnerTest()
         {
@@ -176,6 +181,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result.Count(), Is.EqualTo(0));
         }
 
+        // Teszt 5
         [Test]
         public void MostCatsAdoptedByTest()
         {
@@ -186,7 +192,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result.OwnerId, Is.EqualTo(2));
         }
 
-        // Ide még kell egy többtáblás non-crud tesztelés
+        // Teszt 6 - Ide még kell egy többtáblás non-crud tesztelés
         [Test]
         public void Test6()
         {
@@ -195,7 +201,7 @@ namespace GPA48P_HFT_2021221.Test
             // ASSERT
         }
 
-        // Create crud metódus tesztelés
+        // Teszt 7 - Create crud metódus tesztelés
         [Test]
         public void Test7()
         {
@@ -204,7 +210,7 @@ namespace GPA48P_HFT_2021221.Test
             // ASSERT
         }
 
-        // Create crud metódus tesztelés
+        // Teszt 8 - Create crud metódus tesztelés
         [Test]
         public void Test8()
         {
@@ -213,7 +219,7 @@ namespace GPA48P_HFT_2021221.Test
             // ASSERT
         }
 
-        // Create crud metódus tesztelés
+        // Teszt 9 - Create crud metódus tesztelés
         [Test]
         public void Test9()
         {
@@ -222,7 +228,7 @@ namespace GPA48P_HFT_2021221.Test
             // ASSERT
         }
 
-        // Create crud metódus tesztelés
+        // Teszt 10 - Create crud metódus tesztelés
         [Test]
         public void Test10()
         {
