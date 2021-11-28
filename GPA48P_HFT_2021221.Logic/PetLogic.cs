@@ -52,13 +52,13 @@ namespace GPA48P_HFT_2021221.Logic
             petRepository.Update(pet);
         }
 
-        // NON-CRUD, 1 táblás, tesztelés miatt
+        // Nézzük meg, hogy mennyi az állatok átlagéletkora!
         public double AvarageAge()
         {
             return petRepository.GetAll().Average(p => p.Age);
         }
 
-        // Ide még kell egy többtáblás non-crud
+        // Ide még kell egy többtáblás non-crud!
         public void Valami()
         {
 
