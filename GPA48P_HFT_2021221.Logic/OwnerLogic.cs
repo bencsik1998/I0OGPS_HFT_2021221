@@ -60,6 +60,7 @@ namespace GPA48P_HFT_2021221.Logic
             ownerRepository.Update(owner);
         }
 
+        // Megadott gazdi ID alapján nézzük meg, hogy hány kutyája van!
         public IEnumerable<Pet> DogsOfOwner(int ownerId)
         {
             try
@@ -78,6 +79,7 @@ namespace GPA48P_HFT_2021221.Logic
             }
         }
 
+        // Nézzük meg melyik gazdi fogadta örökbe a legtöbb macskát!
         public Owner MostCatsAdoptedBy()
         {
             var result = ownerRepository.GetAll()
