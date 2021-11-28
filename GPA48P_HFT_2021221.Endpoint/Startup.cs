@@ -4,13 +4,8 @@ using GPA48P_HFT_2021221.Repository;
 using GPA48P_HFT_2021221.Logic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GPA48P_HFT_2021221.Endpoint
 {
