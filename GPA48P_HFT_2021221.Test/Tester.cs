@@ -117,6 +117,7 @@ namespace GPA48P_HFT_2021221.Test
         }
 
         // Teszt 1
+        // // Nézzük meg, hogy mennyi az állatok átlagéletkora!
         [Test]
         public void AvarageAgeTest()
         {
@@ -127,7 +128,17 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result, Is.EqualTo(7));
         }
 
-        // Teszt 2
+        // Teszt 2 - Ide még kell egy többtáblás non-crud tesztelés
+        [Test]
+        public void Test6()
+        {
+            // ACT
+
+            // ASSERT
+        }
+
+        // Teszt 3
+        // Megadott menhely ID alapján nézzük meg a kisállatok átlagéletkorát!
         [Test]
         public void AvarageAgeByPetsAtOneShelterTest()
         {
@@ -138,7 +149,8 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result, Is.EqualTo(4));
         }
 
-        // Teszt 3
+        // Teszt 4
+        // // Nézzük meg, hogy menhelyenként mennyi a kutyák átlagéletkora!
         [Test]
         public void AvarageAgeOfDogsAtAllShelters()
         {
@@ -170,7 +182,8 @@ namespace GPA48P_HFT_2021221.Test
             return false;
         }
 
-        // Teszt 4
+        // Teszt 5
+        // Megadott gazdi ID alapján nézzük meg, hogy hány kutyája van!
         [Test]
         public void DogsOfOwnerTest()
         {
@@ -181,7 +194,8 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result.Count(), Is.EqualTo(0));
         }
 
-        // Teszt 5
+        // Teszt 6
+        // Nézzük meg melyik gazdi fogadta örökbe a legtöbb macskát!
         [Test]
         public void MostCatsAdoptedByTest()
         {
@@ -192,22 +206,20 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result.OwnerId, Is.EqualTo(2));
         }
 
-        // Teszt 6 - Ide még kell egy többtáblás non-crud tesztelés
-        [Test]
-        public void Test6()
-        {
-            // ACT
-
-            // ASSERT
-        }
-
         // Teszt 7 - Create crud metódus tesztelés
+        // Gazdi keresztneve lehet üres string? Nem!
         [Test]
-        public void Test7()
+        public void CrudCreateOwnerFirstNameTest()
         {
-            // ACT
-
             // ASSERT
+            Assert.Throws<Exception>(() => ownerLogic.Create(new Owner
+            {
+                FirstName = "",
+                LastName = "Horváth",
+                Address = "Budapest Fehér utca 11",
+                PhoneNumber = "06309876123",
+                Age = 32
+            }));
         }
 
         // Teszt 8 - Create crud metódus tesztelés
