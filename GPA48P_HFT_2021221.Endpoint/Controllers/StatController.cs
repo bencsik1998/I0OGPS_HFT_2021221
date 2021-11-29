@@ -20,42 +20,42 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             this.pl = pl;
         }
 
-        // GET: /stat/avarageAgeByPetsAtOneShelter
+        // GET: /stat/getavarageagebypetsatoneshelter/id
         [HttpGet("{id}")]
         public double GetAvarageAgeByPetsAtOneShelter(int shelterId)
         {
             return asl.AvarageAgeByPetsAtOneShelter(shelterId);
         }
 
-        // GET: /stat/avarageAgeOfDogsAtAllShelters
+        // GET: /stat/getavarageageofdogsatallshelters
         [HttpGet]
         public IEnumerable<AvarageAgeOfDogsAtAllShelters> GetAvarageAgeOfDogsAtAllShelters()
         {
             return asl.AvarageAgeOfDogsAtAllShelters();
         }
 
-        // GET: /stat/dogsOfOwner
+        // GET: /stat/getdogsofowner/id
         [HttpGet("{id}")]
         public IEnumerable<Pet> GetDogsOfOwner(int ownerId)
         {
             return ol.DogsOfOwner(ownerId);
         }
 
-        // GET: /stat/mostCatsAdoptedBy
+        // GET: /stat/getmostcatsadoptedby
         [HttpGet]
         public Owner GetMostCatsAdoptedBy()
         {
             return ol.MostCatsAdoptedBy();
         }
 
-        // GET: /stat/avarageAge
+        // GET: /stat/getavarageage
         [HttpGet]
-        public double AvarageAge()
+        public double GetAvarageAge()
         {
             return pl.AvarageAge();
         }
 
-        // GET: /stat/valami
+        // GET: /stat/getvalami
         [HttpGet]
         public void GetValami()
         {
