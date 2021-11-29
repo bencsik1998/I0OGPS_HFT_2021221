@@ -121,7 +121,7 @@ namespace GPA48P_HFT_2021221.Test
         public void AvarageAgeTest()
         {
             // ACT
-            double result = petLogic.AvarageAge();
+            double result = petLogic.AvarageAgeOfPets();
 
             // ASSERT
             Assert.That(result, Is.EqualTo(7));
