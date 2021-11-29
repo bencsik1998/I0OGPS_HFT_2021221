@@ -20,8 +20,8 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             this.pl = pl;
         }
 
-        // GET: /stat/avarageagebypetsatoneshelter/id
-        [HttpGet("{id}")]
+        // GET: /stat/avarageagebypetsatoneshelter/shelterid
+        [HttpGet("{shelterid}")]
         public double AvarageAgeByPetsAtOneShelter(int shelterId)
         {
             return asl.AvarageAgeByPetsAtOneShelter(shelterId);
@@ -34,8 +34,8 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             return asl.AvarageAgeOfDogsAtAllShelters();
         }
 
-        // GET: /stat/dogsofowner/id
-        [HttpGet("{id}")]
+        // GET: /stat/dogsofowner/ownerid
+        [HttpGet("{ownerid}")]
         public IEnumerable<Pet> DogsOfOwner(int ownerId)
         {
             return ol.DogsOfOwner(ownerId);
