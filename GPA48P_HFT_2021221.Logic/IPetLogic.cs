@@ -15,7 +15,7 @@ namespace GPA48P_HFT_2021221.Logic
 
         void Update(Pet pet);
 
-        double AvarageAge();
+        double AvarageAgeOfPets();
 
         public void Valami();
     }

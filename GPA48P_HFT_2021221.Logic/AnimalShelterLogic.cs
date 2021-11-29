@@ -63,19 +63,11 @@ namespace GPA48P_HFT_2021221.Logic
         // Megadott menhely ID alapján nézzük meg a kisállatok átlagéletkorát!
         public double AvarageAgeByPetsAtOneShelter(int shelterId)
         {
-            try
-            {
-                var result = animalShelterRepository.GetAll()
+            var result = animalShelterRepository.GetAll()
                                                 .SingleOrDefault(x => x.ShelterId
                                                     .Equals(shelterId))
                                                 .Pets.Average(x => x.Age);
-                return result;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            return result;
         }
 
         // Nézzük meg, hogy menhelyenként mennyi a kutyák átlagéletkora!

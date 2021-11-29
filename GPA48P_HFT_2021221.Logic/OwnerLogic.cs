@@ -63,20 +63,12 @@ namespace GPA48P_HFT_2021221.Logic
         // Megadott gazdi ID alapján nézzük meg, hogy hány kutyája van!
         public IEnumerable<Pet> DogsOfOwner(int ownerId)
         {
-            try
-            {
-                var result = ownerRepository.GetAll()
+            var result = ownerRepository.GetAll()
                                             .SingleOrDefault(x => x.OwnerId
                                                 .Equals(ownerId))
                                             .Pets.Where(x => x.Class
                                                 .Equals("Kutya"));
-                return result;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            return result;
         }
 
         // Nézzük meg melyik gazdi fogadta örökbe a legtöbb macskát!
