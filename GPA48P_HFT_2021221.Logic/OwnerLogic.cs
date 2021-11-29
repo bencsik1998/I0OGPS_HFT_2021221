@@ -17,13 +17,21 @@ namespace GPA48P_HFT_2021221.Logic
 
         public void Create(Owner owner)
         {
-            if (owner.FirstName is null && owner.LastName is null || owner.FirstName == "" && owner.LastName == "")
+            if (owner.FirstName is null || owner.FirstName == "")
             {
-                throw new Exception("A kereszt- és vezetéknév nem lehet üres!");
+                throw new Exception("A keresztnév nem lehet üres!");
             }
-            else if (owner.FirstName.Length < 3 && owner.LastName.Length < 3)
+            else if (owner.LastName is null || owner.LastName == "")
             {
-                throw new Exception("A kereszt- és vezetéknév nem lehet 3 karakternél rövidebb!");
+                throw new Exception("A vezetéknév nem lehet üres!");
+            }
+            else if (owner.FirstName.Length < 3)
+            {
+                throw new Exception("A keresztnév nem lehet 3 karakternél rövidebb!");
+            }
+            else if (owner.LastName.Length < 3)
+            {
+                throw new Exception("A vezetéknév nem lehet 3 karakternél rövidebb!");
             }
             else if (owner.Address is null || owner.Address == "")
             {
