@@ -20,44 +20,44 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             this.pl = pl;
         }
 
-        // GET: /stat/getavarageagebypetsatoneshelter/id
+        // GET: /stat/avarageagebypetsatoneshelter/id
         [HttpGet("{id}")]
-        public double GetAvarageAgeByPetsAtOneShelter(int shelterId)
+        public double AvarageAgeByPetsAtOneShelter(int shelterId)
         {
             return asl.AvarageAgeByPetsAtOneShelter(shelterId);
         }
 
-        // GET: /stat/getavarageageofdogsatallshelters
+        // GET: /stat/avarageageofdogsatallshelters
         [HttpGet]
-        public IEnumerable<AvarageAgeOfDogsAtAllShelters> GetAvarageAgeOfDogsAtAllShelters()
+        public IEnumerable<AvarageAgeOfDogsAtAllShelters> AvarageAgeOfDogsAtAllShelters()
         {
             return asl.AvarageAgeOfDogsAtAllShelters();
         }
 
-        // GET: /stat/getdogsofowner/id
+        // GET: /stat/dogsofowner/id
         [HttpGet("{id}")]
-        public IEnumerable<Pet> GetDogsOfOwner(int ownerId)
+        public IEnumerable<Pet> DogsOfOwner(int ownerId)
         {
             return ol.DogsOfOwner(ownerId);
         }
 
-        // GET: /stat/getmostcatsadoptedby
+        // GET: /stat/mostcatsadoptedby
         [HttpGet]
-        public Owner GetMostCatsAdoptedBy()
+        public Owner MostCatsAdoptedBy()
         {
             return ol.MostCatsAdoptedBy();
         }
 
-        // GET: /stat/getavarageageofpets
+        // GET: /stat/avarageageofpets
         [HttpGet]
-        public double GetAvarageAgeOfPets()
+        public double AvarageAgeOfPets()
         {
             return pl.AvarageAgeOfPets();
         }
 
-        // GET: /stat/getvalami
+        // GET: /stat/valami
         [HttpGet]
-        public void GetValami()
+        public void Valami()
         {
 
         }

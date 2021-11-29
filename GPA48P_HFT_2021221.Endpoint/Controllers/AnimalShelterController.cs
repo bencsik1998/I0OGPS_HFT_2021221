@@ -16,35 +16,35 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             this.asl = asl;
         }
 
-        // GET: /animalShelter
+        // GET: /animalshelter
         [HttpGet]
         public IEnumerable<AnimalShelter> Get()
         {
             return asl.GetAll();
         }
 
-        // GET /animalShelter/id
+        // GET /animalshelter/id
         [HttpGet("{id}")]
         public AnimalShelter Get(int id)
         {
             return asl.Read(id);
         }
 
-        // POST /animalShelter
+        // POST /animalshelter
         [HttpPost]
         public void Post([FromBody] AnimalShelter value)
         {
             asl.Create(value);
         }
 
-        // PUT /animalShelter/id
+        // PUT /animalshelter/id
         [HttpPut("{id}")]
         public void Put([FromBody] AnimalShelter value)
         {
             asl.Update(value);
         }
 
-        // DELETE /animalShelter/id
+        // DELETE /animalshelter/id
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
