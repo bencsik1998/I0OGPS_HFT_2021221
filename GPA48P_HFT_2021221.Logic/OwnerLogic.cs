@@ -41,9 +41,9 @@ namespace GPA48P_HFT_2021221.Logic
             {
                 throw new Exception("A telefonszám nem lehet üres!");
             }
-            else if (owner.Age == 0)
+            else if (owner.Age < 18)
             {
-                throw new Exception("Az életkor nem lehet nulla!");
+                throw new Exception("Kiskorú nem fogadhat örökbe kisállatot!");
             }
             ownerRepository.Create(owner);
         }

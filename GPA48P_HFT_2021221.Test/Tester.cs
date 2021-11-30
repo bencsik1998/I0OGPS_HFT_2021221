@@ -208,6 +208,7 @@ namespace GPA48P_HFT_2021221.Test
 
         // Teszt 7 - Create crud metódus tesztelés
         // Gazdi keresztneve lehet üres string? Nem!
+        // Zöld: dob exceptiont || Piros: nem dob exceptiont
         [Test]
         public void CrudCreateOwnerFirstNameTest()
         {
@@ -223,30 +224,53 @@ namespace GPA48P_HFT_2021221.Test
         }
 
         // Teszt 8 - Create crud metódus tesztelés
+        // Gazdi vezetékneve lehet 2 karakter hosszúságú? Nem!
+        // Zöld: dob exceptiont || Piros: nem dob exceptiont
         [Test]
-        public void Test8()
+        public void CrudCreateOwnerLastNameTest()
         {
-            // ACT
-
             // ASSERT
+            Assert.Throws<Exception>(() => ownerLogic.Create(new Owner
+            {
+                FirstName = "József",
+                LastName = "Ok",
+                Address = "Budapest Fehér utca 11",
+                PhoneNumber = "06309876123",
+                Age = 32
+            }));
         }
 
         // Teszt 9 - Create crud metódus tesztelés
+        // Kiskorú fogadhat örökbe kisállatot? Nem!
+        // Zöld: dob exceptiont || Piros: nem dob exceptiont
         [Test]
-        public void Test9()
+        public void CrudCreateOwnerAgeTest()
         {
-            // ACT
-
             // ASSERT
+            Assert.Throws<Exception>(() => ownerLogic.Create(new Owner
+            {
+                FirstName = "József",
+                LastName = "Horváth",
+                Address = "Budapest Fehér utca 11",
+                PhoneNumber = "06309876123",
+                Age = 17
+            }));
         }
 
         // Teszt 10 - Create crud metódus tesztelés
+        // Lehet a menhely adószáma semmi? Nem!
+        // Zöld: dob exceptiont || Piros: nem dob exceptiont
         [Test]
-        public void Test10()
+        public void CrudCreateAnimalShelterTaxNumberTest()
         {
-            // ACT
-
             // ASSERT
+            Assert.Throws<Exception>(() => animalShelterLogic.Create(new AnimalShelter
+            {
+                SheltertName = "Menhely",
+                Address = "Budapest Fehér utca 12",
+                PhoneNumber = "06308769321",
+                TaxNumber = ""
+            }));
         }
     }
 }
