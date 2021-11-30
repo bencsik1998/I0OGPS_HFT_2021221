@@ -1,4 +1,3 @@
-using GPA48P_HFT_2021221.Models;
 using GPA48P_HFT_2021221.Data;
 using GPA48P_HFT_2021221.Repository;
 using GPA48P_HFT_2021221.Logic;
