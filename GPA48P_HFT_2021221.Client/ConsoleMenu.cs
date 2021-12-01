@@ -148,7 +148,7 @@ namespace GPA48P_HFT_2021221.Client
             Console.Write("New pet age: ");
             int age = int.Parse(Console.ReadLine());
             Console.Write("New pet reception date: ");
-            DateTime AdoptionTime = DateTime.Parse(Console.ReadLine());
+            int adoptionYear = int.Parse(Console.ReadLine());
             Console.Write("New pet's owner ID: ");
             int ownerId = int.Parse(Console.ReadLine());
             Console.Write("New pet's animal shelter ID: ");
@@ -159,7 +159,7 @@ namespace GPA48P_HFT_2021221.Client
                 Class = cLass,
                 Type = type,
                 Age = age,
-                AdoptionTime = AdoptionTime,
+                AdoptionYear = adoptionYear,
                 OwnerId = ownerId,
                 ShelterId = shelterId
             }, "pet");
@@ -233,7 +233,7 @@ namespace GPA48P_HFT_2021221.Client
             Console.WriteLine("Class: " + pet.Class);
             Console.WriteLine("Type: " + pet.Type);
             Console.WriteLine("Age: " + pet.Age);
-            Console.WriteLine("Reception date: " + pet.AdoptionTime);
+            Console.WriteLine("Reception date: " + pet.AdoptionYear);
             Console.WriteLine("Owner ID: " + pet.OwnerId);
             Console.WriteLine("Animal shelter ID: " + pet.ShelterId);
 

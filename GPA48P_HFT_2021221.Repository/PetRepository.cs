@@ -41,7 +41,7 @@ namespace GPA48P_HFT_2021221.Repository
             var oldPet = Read(pet.PetId);
             oldPet.Type = pet.Type;
             oldPet.Age = pet.Age;
-            oldPet.AdoptionTime = pet.AdoptionTime;
+            oldPet.AdoptionYear = pet.AdoptionYear;
             dataBase.SaveChanges();
         }
     }
