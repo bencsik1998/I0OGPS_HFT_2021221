@@ -198,7 +198,7 @@ namespace GPA48P_HFT_2021221.Test
         }
 
         // Teszt 6
-        // Nézzük meg hány gazdi fogadott örökbe kisállatot 2015 előtt!
+        // Nézzük meg hány gazdi fogadott örökbe 2015 előtt kisállatot!
         [Test]
         public void HowManyOwnerAdoptedPetBefore2015Test()
         {
