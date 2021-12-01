@@ -37,11 +37,10 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             ol.Create(value);
         }
 
-        // PUT /owner/ownerid
-        [HttpPut("{ownerid}")]
-        public void Put(int ownerId, [FromBody] Owner value)
+        // PUT /owner
+        [HttpPut]
+        public void Put([FromBody] Owner value)
         {
-            value.OwnerId = ownerId;
             ol.Update(value);
         }
 

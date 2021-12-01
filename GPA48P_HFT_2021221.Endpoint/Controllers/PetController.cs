@@ -37,8 +37,8 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             pl.Create(value);
         }
 
-        // PUT /pet/petid
-        [HttpPut("{petid}")]
+        // PUT /pet
+        [HttpPut]
         public void Put([FromBody] Pet value)
         {
             pl.Update(value);
