@@ -30,8 +30,8 @@ namespace GPA48P_HFT_2021221.Client
             Console.WriteLine("| 14) View the dogs avarage age at all shelters     |");
             Console.WriteLine("| 15) View how much dogs have an owner by ID        |");
             Console.WriteLine("| 16) View which owner adopted the most cats        |");
+            Console.WriteLine("| 17) View how many owner adopted pet before 2015   |");
             Console.WriteLine("| 17) View how much the avarage age of all pets     |");
-            Console.WriteLine("| 17) IDE MÉG KELL MAJD VALMILYEN NON CRUD          |");
             Console.WriteLine("| X) Exit                                           |");
             Console.WriteLine("|---------------------------------------------------|");
             Console.Write("\r\nSelect an option: ");
@@ -64,6 +64,15 @@ namespace GPA48P_HFT_2021221.Client
                     break;
                 case "9":
                     UpdatePet();
+                    break;
+                case "10":
+                    DeleteAnimalShelter();
+                    break;
+                case "11":
+                    DeleteOwner();
+                    break;
+                case "12":
+                    DeletePet();
                     break;
                 case "X":
                     Exit();
@@ -353,6 +362,60 @@ namespace GPA48P_HFT_2021221.Client
 
             Console.WriteLine();
             Console.WriteLine("Pet updated successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void DeleteAnimalShelter()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+
+            Console.Write("ID of the animal shelter: ");
+            int shelterId = int.Parse(Console.ReadLine());
+
+            rest.Delete(shelterId, "animalshelter");
+
+            Console.WriteLine();
+            Console.WriteLine("Animal shelter deleted successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void DeleteOwner()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+
+            Console.Write("ID of the owner: ");
+            int ownerId = int.Parse(Console.ReadLine());
+
+            rest.Delete(ownerId, "owner");
+
+            Console.WriteLine();
+            Console.WriteLine("Owner deleted successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void DeletePet()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+
+            Console.Write("ID of the pet: ");
+            int petId = int.Parse(Console.ReadLine());
+
+            rest.Delete(petId, "pet");
+
+            Console.WriteLine();
+            Console.WriteLine("Pet deleted successfully");
             Console.WriteLine("Press enter to jump back to main menu");
             Console.ReadLine();
 
