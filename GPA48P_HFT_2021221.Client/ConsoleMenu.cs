@@ -41,6 +41,12 @@ namespace GPA48P_HFT_2021221.Client
                 case "1":
                     CreateAnimalShelter();
                     break;
+                case "2":
+                    CreateOwner();
+                    break;
+                case "3":
+                    CreatePet();
+                    break;
                 case "x":
                     Exit();
                     break;
@@ -73,6 +79,72 @@ namespace GPA48P_HFT_2021221.Client
             Console.WriteLine("Animal shelter created successfully");
             Console.WriteLine("Press enter to jump back to main menu");
             Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void CreateOwner()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+            Console.Write("New owner first name: ");
+            string firstName = Console.ReadLine();
+            Console.Write("New owner last name: ");
+            string lastName = Console.ReadLine();
+            Console.Write("New owner address: ");
+            string address = Console.ReadLine();
+            Console.Write("New owner phone number: ");
+            string phoneNumber = Console.ReadLine();
+            Console.Write("New owner age: ");
+            int age = int.Parse(Console.ReadLine());
+
+            rest.Post(new Owner
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                Address = address,
+                PhoneNumber = phoneNumber,
+                Age = age
+            }, "owner");
+
+            Console.WriteLine("Owner created successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void CreatePet()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+            Console.Write("New pet class: ");
+            string cLass = Console.ReadLine();
+            Console.Write("New pet type: ");
+            string type = Console.ReadLine();
+            Console.Write("New pet age: ");
+            int age = int.Parse(Console.ReadLine());
+            Console.Write("New pet reception date: ");
+            DateTime receptionDate = DateTime.Parse(Console.ReadLine());
+            Console.Write("New pet's owner ID: ");
+            int ownerId = int.Parse(Console.ReadLine());
+            Console.Write("New pet's animal shelter ID: ");
+            int shelterId = int.Parse(Console.ReadLine());
+
+            rest.Post(new Pet
+            {
+                Class = cLass,
+                Type = type,
+                Age = age,
+                ReceptionDate = receptionDate,
+                OwnerId = ownerId,
+                ShelterId = shelterId
+            }, "pet");
+
+            Console.WriteLine("Pet created successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
             MainMenu();
         }
 
