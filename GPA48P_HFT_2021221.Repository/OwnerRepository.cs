@@ -39,7 +39,6 @@ namespace GPA48P_HFT_2021221.Repository
         public void Update(Owner owner)
         {
             var oldOwner = Read(owner.OwnerId);
-            oldOwner.OwnerId = owner.OwnerId;
             oldOwner.FirstName = owner.FirstName;
             oldOwner.LastName = owner.LastName;
             oldOwner.Address = owner.Address;
