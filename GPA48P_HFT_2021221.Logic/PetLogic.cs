@@ -55,7 +55,8 @@ namespace GPA48P_HFT_2021221.Logic
         // Nézzük meg, hogy mennyi az állatok átlagéletkora!
         public double AvarageAgeOfPets()
         {
-            return petRepository.GetAll().Average(p => p.Age);
+            return petRepository.GetAll()
+                                .Average(p => p.Age);
         }
     }
 }
