@@ -264,6 +264,7 @@ namespace GPA48P_HFT_2021221.Client
 
             rest.Put(new AnimalShelter
             {
+                ShelterId = shelterId,
                 SheltertName = shelterName,
                 Address = address,
                 PhoneNumber = phoneNumber,
@@ -305,7 +306,8 @@ namespace GPA48P_HFT_2021221.Client
                 LastName = lastName,
                 Address = address,
                 PhoneNumber = phoneNumber,
-                Age = age
+                Age = age,
+
             }, "owner");
 
             Console.WriteLine();
@@ -318,7 +320,43 @@ namespace GPA48P_HFT_2021221.Client
 
         public static void UpdatePet()
         {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
 
+            Console.Write("ID of the pet: ");
+            int petId = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.Write("New pet class: ");
+            string cLass = Console.ReadLine();
+            Console.Write("New pet type: ");
+            string type = Console.ReadLine();
+            Console.Write("New pet age: ");
+            int age = int.Parse(Console.ReadLine());
+            Console.Write("New pet adoption year: ");
+            int adoptionYear = int.Parse(Console.ReadLine());
+            Console.Write("New pet's owner ID: ");
+            int ownerId = int.Parse(Console.ReadLine());
+            Console.Write("New pet's animal shelter ID: ");
+            int shelterId = int.Parse(Console.ReadLine());
+
+            rest.Put(new Pet
+            {
+                PetId = petId,
+                Class = cLass,
+                Type = type,
+                Age = age,
+                AdoptionYear = adoptionYear,
+                OwnerId = ownerId,
+                ShelterId = shelterId
+            }, "pet");
+
+            Console.WriteLine();
+            Console.WriteLine("Pet updated successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
         }
 
         public static void Exit()
