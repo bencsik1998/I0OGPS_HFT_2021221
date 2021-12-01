@@ -56,6 +56,15 @@ namespace GPA48P_HFT_2021221.Client
                 case "6":
                     ReadPet();
                     break;
+                case "7":
+                    UpdateAnimalShelter();
+                    break;
+                case "8":
+                    UpdateOwner();
+                    break;
+                case "9":
+                    UpdatePet();
+                    break;
                 case "X":
                     Exit();
                     break;
@@ -155,6 +164,7 @@ namespace GPA48P_HFT_2021221.Client
                 ShelterId = shelterId
             }, "pet");
 
+            Console.WriteLine();
             Console.WriteLine("Pet created successfully");
             Console.WriteLine("Press enter to jump back to main menu");
             Console.ReadLine();
@@ -232,6 +242,85 @@ namespace GPA48P_HFT_2021221.Client
             Console.ReadLine();
 
             MainMenu();
+        }
+
+        public static void UpdateAnimalShelter()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+
+            Console.Write("ID of the animal shelter: ");
+            int shelterId = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.Write("New animal shelter name: ");
+            string shelterName = Console.ReadLine();
+            Console.Write("New animal shelter address: ");
+            string address = Console.ReadLine();
+            Console.Write("New animal shelter phone number: ");
+            string phoneNumber = Console.ReadLine();
+            Console.Write("New animal shelter tax number: ");
+            string taxNumber = Console.ReadLine();
+
+            rest.Put(new AnimalShelter
+            {
+                SheltertName = shelterName,
+                Address = address,
+                PhoneNumber = phoneNumber,
+                TaxNumber = taxNumber
+            }, "animalshelter");
+
+            Console.WriteLine();
+            Console.WriteLine("Animal shelter updated successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void UpdateOwner()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+
+            Console.Write("ID of the owner: ");
+            int ownerId = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.Write("New owner first name: ");
+            string firstName = Console.ReadLine();
+            Console.Write("New owner last name: ");
+            string lastName = Console.ReadLine();
+            Console.Write("New owner address: ");
+            string address = Console.ReadLine();
+            Console.Write("New owner phone number: ");
+            string phoneNumber = Console.ReadLine();
+            Console.Write("New owner age: ");
+            int age = int.Parse(Console.ReadLine());
+
+            Owner owner = rest.Get<Owner>(ownerId, "owner");
+
+            Owner newOwner = owner;
+
+            newOwner.FirstName = firstName;
+            newOwner.LastName = lastName;
+            newOwner.Address = address;
+            newOwner.PhoneNumber = phoneNumber;
+            newOwner.Age = age;
+
+            rest.Put(newOwner, "owner");
+
+            Console.WriteLine();
+            Console.WriteLine("Owner created successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void UpdatePet()
+        {
+
         }
 
         public static void Exit()

@@ -23,11 +23,11 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             return pl.GetAll();
         }
 
-        // GET /pet/id
-        [HttpGet("{id}")]
-        public Pet Get(int id)
+        // GET /pet/petid
+        [HttpGet("{petid}")]
+        public Pet Get(int petId)
         {
-            return pl.Read(id);
+            return pl.Read(petId);
         }
 
         // POST /pet
@@ -37,18 +37,18 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             pl.Create(value);
         }
 
-        // PUT /pet
-        [HttpPut("{id}")]
+        // PUT /pet/petid
+        [HttpPut("{petid}")]
         public void Put([FromBody] Pet value)
         {
             pl.Update(value);
         }
 
-        // DELETE /pet/id
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE /pet/petid
+        [HttpDelete("{petid}")]
+        public void Delete(int petId)
         {
-            pl.Delete(id);
+            pl.Delete(petId);
         }
     }
 }
