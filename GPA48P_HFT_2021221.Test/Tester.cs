@@ -29,27 +29,27 @@ namespace GPA48P_HFT_2021221.Test
             {
                 new Pet()
                 {
-                    PetId = 1, Class = "Kutya", Type = "Labrador", Age = 2, ReceptionDate = new DateTime(2019,7,11), ShelterId = 1, OwnerId = 1
+                    PetId = 1, Class = "Kutya", Type = "Labrador", Age = 2, AdoptionTime = new DateTime(2019,7,11), ShelterId = 1, OwnerId = 1
                 },
                 new Pet()
                 {
-                    PetId = 2, Class = "Kutya", Type = "Border collie", Age = 4, ReceptionDate = new DateTime(2018,6,21), ShelterId = 1, OwnerId = 1
+                    PetId = 2, Class = "Kutya", Type = "Border collie", Age = 4, AdoptionTime = new DateTime(2018,6,21), ShelterId = 1, OwnerId = 1
                 },
                 new Pet()
                 {
-                    PetId = 3, Class = "Kutya", Type = "Beagle", Age = 6, ReceptionDate = new DateTime(2017,8,31), ShelterId = 1, OwnerId = 1
+                    PetId = 3, Class = "Kutya", Type = "Beagle", Age = 6, AdoptionTime = new DateTime(2017,8,31), ShelterId = 1, OwnerId = 1
                 },
                 new Pet()
                 {
-                    PetId = 4, Class = "Macska", Type = "Perzsa", Age = 8, ReceptionDate = new DateTime(2015,3,5), ShelterId = 2, OwnerId = 2
+                    PetId = 4, Class = "Macska", Type = "Perzsa", Age = 8, AdoptionTime = new DateTime(2015,3,5), ShelterId = 2, OwnerId = 2
                 },
                 new Pet()
                 {
-                    PetId = 5, Class = "Macska", Type = "Bengáli", Age = 10, ReceptionDate = new DateTime(2014,5,23), ShelterId = 3, OwnerId = 3
+                    PetId = 5, Class = "Macska", Type = "Bengáli", Age = 10, AdoptionTime = new DateTime(2014,5,23), ShelterId = 3, OwnerId = 3
                 },
                 new Pet()
                 {
-                    PetId = 6, Class = "Macska", Type = "Szfinx", Age = 12, ReceptionDate = new DateTime(2013,1,17), ShelterId = 2, OwnerId = 2
+                    PetId = 6, Class = "Macska", Type = "Szfinx", Age = 12, AdoptionTime = new DateTime(2013,1,17), ShelterId = 2, OwnerId = 2
                 }
             }.AsQueryable();
 
