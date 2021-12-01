@@ -148,7 +148,7 @@ namespace GPA48P_HFT_2021221.Client
             Console.Write("New pet age: ");
             int age = int.Parse(Console.ReadLine());
             Console.Write("New pet reception date: ");
-            DateTime receptionDate = DateTime.Parse(Console.ReadLine());
+            DateTime AdoptionTime = DateTime.Parse(Console.ReadLine());
             Console.Write("New pet's owner ID: ");
             int ownerId = int.Parse(Console.ReadLine());
             Console.Write("New pet's animal shelter ID: ");
@@ -159,7 +159,7 @@ namespace GPA48P_HFT_2021221.Client
                 Class = cLass,
                 Type = type,
                 Age = age,
-                ReceptionDate = receptionDate,
+                AdoptionTime = AdoptionTime,
                 OwnerId = ownerId,
                 ShelterId = shelterId
             }, "pet");
@@ -233,7 +233,7 @@ namespace GPA48P_HFT_2021221.Client
             Console.WriteLine("Class: " + pet.Class);
             Console.WriteLine("Type: " + pet.Type);
             Console.WriteLine("Age: " + pet.Age);
-            Console.WriteLine("Reception date: " + pet.ReceptionDate);
+            Console.WriteLine("Reception date: " + pet.AdoptionTime);
             Console.WriteLine("Owner ID: " + pet.OwnerId);
             Console.WriteLine("Animal shelter ID: " + pet.ShelterId);
 
@@ -298,17 +298,15 @@ namespace GPA48P_HFT_2021221.Client
             Console.Write("New owner age: ");
             int age = int.Parse(Console.ReadLine());
 
-            Owner owner = rest.Get<Owner>(ownerId, "owner");
-
-            Owner newOwner = owner;
-
-            newOwner.FirstName = firstName;
-            newOwner.LastName = lastName;
-            newOwner.Address = address;
-            newOwner.PhoneNumber = phoneNumber;
-            newOwner.Age = age;
-
-            rest.Put(newOwner, "owner");
+            rest.Put(new Owner
+            {
+                OwnerId = ownerId,
+                FirstName = firstName,
+                LastName = lastName,
+                Address = address,
+                PhoneNumber = phoneNumber,
+                Age = age
+            }, "owner");
 
             Console.WriteLine();
             Console.WriteLine("Owner created successfully");

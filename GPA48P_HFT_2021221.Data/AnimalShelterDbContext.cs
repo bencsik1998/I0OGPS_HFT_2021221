@@ -135,7 +135,7 @@ namespace GPA48P_HFT_2021221.Data
                 Class = "Kutya",
                 Type = "Terrier",
                 Age = 4,
-                ReceptionDate = new DateTime(2007,1,30),
+                AdoptionTime = new DateTime(2007,1,30),
                 OwnerId = owner1.OwnerId,
                 ShelterId = shelter1.ShelterId
             };
@@ -145,7 +145,7 @@ namespace GPA48P_HFT_2021221.Data
                 PetId = 2,
                 Class = "Kutya",
                 Type = "Border Collie",
-                Age = 7, ReceptionDate = new DateTime(2004,3,27),
+                Age = 7, AdoptionTime = new DateTime(2004,3,27),
                 OwnerId = owner2.OwnerId,
                 ShelterId = shelter2.ShelterId
             };
@@ -156,7 +156,7 @@ namespace GPA48P_HFT_2021221.Data
                 Class = "Macska",
                 Type = "Ragdoll",
                 Age = 2,
-                ReceptionDate = new DateTime(2019,2,12),
+                AdoptionTime = new DateTime(2019,2,12),
                 OwnerId = owner1.OwnerId,
                 ShelterId = shelter2.ShelterId
             };
@@ -166,7 +166,7 @@ namespace GPA48P_HFT_2021221.Data
                 PetId = 4,
                 Class = "Macska",
                 Type = "Sziámi",
-                Age = 11, ReceptionDate = new DateTime(2010,4,19),
+                Age = 11, AdoptionTime = new DateTime(2010,4,19),
                 OwnerId = owner2.OwnerId,
                 ShelterId = shelter1.ShelterId
             };
@@ -176,7 +176,7 @@ namespace GPA48P_HFT_2021221.Data
                 PetId = 5,
                 Class = "Kutya",
                 Type = "Bernáthegyi",
-                Age = 1, ReceptionDate = new DateTime(2020,8,23),
+                Age = 1, AdoptionTime = new DateTime(2020,8,23),
                 OwnerId = owner3.OwnerId,
                 ShelterId = shelter3.ShelterId
             };
@@ -187,7 +187,7 @@ namespace GPA48P_HFT_2021221.Data
                 Class = "Macska",
                 Type = "Bengáli",
                 Age = 3,
-                ReceptionDate = new DateTime(2018,7,9),
+                AdoptionTime = new DateTime(2018,7,9),
                 OwnerId = owner1.OwnerId,
                 ShelterId = shelter3.ShelterId
             };
@@ -198,7 +198,7 @@ namespace GPA48P_HFT_2021221.Data
                 Class = "Kutya",
                 Type = "Rottweiler",
                 Age = 7,
-                ReceptionDate = new DateTime(2014, 3, 12),
+                AdoptionTime = new DateTime(2014, 3, 12),
                 OwnerId = owner2.OwnerId,
                 ShelterId = shelter1.ShelterId
             };
@@ -209,7 +209,7 @@ namespace GPA48P_HFT_2021221.Data
                 Class = "Macska",
                 Type = "Abesszin",
                 Age = 4,
-                ReceptionDate = new DateTime(2021, 8, 1),
+                AdoptionTime = new DateTime(2021, 8, 1),
                 OwnerId = owner1.OwnerId,
                 ShelterId = shelter3.ShelterId
             };
@@ -220,7 +220,7 @@ namespace GPA48P_HFT_2021221.Data
                 Class = "Kutya",
                 Type = "Beagle",
                 Age = 9,
-                ReceptionDate = new DateTime(2011, 3, 21),
+                AdoptionTime = new DateTime(2011, 3, 21),
                 OwnerId = owner2.OwnerId,
                 ShelterId = shelter2.ShelterId
             };
@@ -231,7 +231,7 @@ namespace GPA48P_HFT_2021221.Data
                 Class = "Macska",
                 Type = "Burma",
                 Age = 5,
-                ReceptionDate = new DateTime(2016, 12, 22),
+                AdoptionTime = new DateTime(2016, 12, 22),
                 OwnerId = owner3.OwnerId,
                 ShelterId = shelter3.ShelterId
             };

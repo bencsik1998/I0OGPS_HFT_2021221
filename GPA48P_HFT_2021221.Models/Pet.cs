@@ -21,7 +21,7 @@ namespace GPA48P_HFT_2021221.Models
         public int Age { get; set; }
 
         [Required]
-        public DateTime ReceptionDate { get; set; }
+        public DateTime AdoptionTime { get; set; }
 
         [NotMapped]
         public virtual Owner Owner { get; set; }
