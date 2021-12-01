@@ -1,5 +1,4 @@
-﻿using ConsoleTools;
-using GPA48P_HFT_2021221.Models;
+﻿using GPA48P_HFT_2021221.Models;
 using System;
 
 namespace GPA48P_HFT_2021221.Client
@@ -8,67 +7,9 @@ namespace GPA48P_HFT_2021221.Client
     {
         static void Main(string[] args)
         {
-            System.Threading.Thread.Sleep(8000);
+            System.Threading.Thread.Sleep(5000);
 
             RestService rest = new RestService("http://localhost:62480");
-
-            AnimalShelter animalShelter = new AnimalShelter();
-            Owner owner = new Owner();
-            Pet pet = new Pet();
-
-            var subMenu = new ConsoleMenu(args, level: 1)
-                .Add("Sub_One", () => rest.Post(new AnimalShelter(), "animalshelter"))
-                .Add("Sub_Two", () => rest.Post(new Owner(), "owner"))
-                .Add("Sub_Three", () => rest.Post(new Pet(), "pet"))
-                .Add("Sub_Four", () => rest.Get<AnimalShelter>("animalshelter"))
-                .Add("Sub_Five", () => rest.Get<Owner>("owner"))
-                .Add("Sub_Six", () => rest.Get<Pet>("pet"))
-                .Add("Sub_Seven", () => rest.Put(animalShelter,"animalshelter"))
-                .Add("Sub_Eight", () => rest.Put(owner, "owner"))
-                .Add("Sub_Nine", () => rest.Put(pet, "pet"))
-                .Add("Sub_Ten", () => rest.Delete(animalShelter.ShelterId, "animalshelter"))
-                .Add("Sub_Eleven", () => rest.Delete(owner.OwnerId, "owner"))
-                .Add("Sub_Twelve", () => rest.Delete(pet.PetId, "pet"))
-                // var AvarageAgeOfPets = rest.GetSingle<double>("/stat/avarageageofpets");
-                .Add("Sub_Thirteen", ConsoleMenu.Close)
-                .Configure(config =>
-                {
-                    config.Selector = "--> ";
-                    config.EnableFilter = true;
-                    config.Title = "Submenu";
-                    config.EnableBreadcrumb = true;
-                    config.WriteBreadcrumbAction = titles =>
-                        Console.WriteLine(string.Join(" / ", titles));
-                });
-
-            var menu = new ConsoleMenu(args, level: 0)
-                .Add("Create a new animal shelter", () => rest.Post(new AnimalShelter(), "animalshelter"))
-                .Add("Create a new owner", () => rest.Post(new Owner(), "owner"))
-                .Add("Create a new pet", () => rest.Post(new Pet(), "pet"))
-                .Add("Read all the animal shelters", () => rest.Get<AnimalShelter>("animalshelter"))
-                .Add("Read all the owners", () => rest.Get<Owner>("owner"))
-                .Add("Read all the pets", () => rest.Get<Pet>("pet"))
-                .Add("Update an existing animal shelter", () => rest.Put(animalShelter, "animalshelter"))
-                .Add("Update an existing owner", () => rest.Put(owner, "owner"))
-                .Add("Update an existing pet", () => rest.Put(pet, "pet"))
-                .Add("Delete an existing animal shelter", () => rest.Delete(animalShelter.ShelterId, "animalshelter"))
-                .Add("Delete an existing owner", () => rest.Delete(owner.OwnerId, "owner"))
-                .Add("Delete an existing pet", () => rest.Delete(pet.PetId, "pet"))
-                // var AvarageAgeOfPets = rest.GetSingle<double>("/stat/avarageageofpets");
-                .Add("Sub", subMenu.Show)
-                .Add("Change me", (thisMenu) => thisMenu.CurrentItem.Name = "I am changed!")
-                .Add("Close", ConsoleMenu.Close)
-                .Add("Exit", () => Environment.Exit(0))
-                .Configure(config =>
-                {
-                    config.Selector = "--> ";
-                    config.EnableFilter = true;
-                    config.Title = "Main menu";
-                    config.EnableWriteTitle = true;
-                    config.EnableBreadcrumb = true;
-                });
-
-            menu.Show();
         }
     }
 }
