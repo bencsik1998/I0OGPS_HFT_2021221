@@ -91,12 +91,11 @@ namespace GPA48P_HFT_2021221.Logic
             return result;
         }
 
-        // Nézzük meg azokat a gazdikat akik 2015 előtt fogadtak örökbe kisállatot!
-        public IEnumerable<Owner> OwnersWhoAdoptedPetsBefore2015()
+        // Nézzük meg hány gazdi fogadott örökbe 2015 előtt kisállatot!
+        public int HowManyOwnerAdoptedPetBefore2015()
         {
             var result = ownerRepository.GetAll()
-                                        .Where(x => x.Pets
-                                            .Any(y => y.AdoptionTime < DateTime.Parse("2015.01.01")));
+                                        .Count(x => x.Pets.Where(y => y.AdoptionYear > 2015) != null);
             return result;
         }
     }

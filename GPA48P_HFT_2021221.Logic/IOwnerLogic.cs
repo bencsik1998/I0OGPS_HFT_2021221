@@ -19,6 +19,6 @@ namespace GPA48P_HFT_2021221.Logic
 
         Owner MostCatsAdoptedBy();
 
-        IEnumerable<Owner> OwnersWhoAdoptedPetsBefore2015();
+        int HowManyOwnerAdoptedPetBefore2015();
     }
 }
