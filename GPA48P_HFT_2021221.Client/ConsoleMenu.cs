@@ -31,7 +31,7 @@ namespace GPA48P_HFT_2021221.Client
             Console.WriteLine("| 15) View how much dogs have an owner by ID        |");
             Console.WriteLine("| 16) View which owner adopted the most cats        |");
             Console.WriteLine("| 17) View how many owner adopted pet before 2015   |");
-            Console.WriteLine("| 17) View how much the avarage age of all pets     |");
+            Console.WriteLine("| 18) View how much the avarage age of all pets     |");
             Console.WriteLine("| X) Exit                                           |");
             Console.WriteLine("|---------------------------------------------------|");
             Console.Write("\r\nSelect an option: ");
@@ -73,6 +73,24 @@ namespace GPA48P_HFT_2021221.Client
                     break;
                 case "12":
                     DeletePet();
+                    break;
+                case "13":
+                    AvarageAgeByPetsAtOneShelter();
+                    break;
+                case "14":
+                    AvarageAgeOfDogsAtAllShelters();
+                    break;
+                case "15":
+                    DogsOfOwner();
+                    break;
+                case "16":
+                    MostCatsAdoptedBy();
+                    break;
+                case "17":
+                    HowManyOwnerAdoptedPetBefore2015();
+                    break;
+                case "18":
+                    AvarageAgeOfPets();
                     break;
                 case "X":
                     Exit();
@@ -420,6 +438,50 @@ namespace GPA48P_HFT_2021221.Client
             Console.ReadLine();
 
             MainMenu();
+        }
+
+        public static void AvarageAgeByPetsAtOneShelter()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+
+            Console.Write("Enter animal shelter ID: ");
+            int shelterid = int.Parse(Console.ReadLine());
+            var result = rest.GetSingle<double>($"/stat/avarageagebypetsatoneshelter/{shelterid}");
+
+            Console.WriteLine();
+            Console.WriteLine("The pets avarage age in a shelter: " + result);
+
+            Console.WriteLine();
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void AvarageAgeOfDogsAtAllShelters()
+        {
+
+        }
+
+        public static void DogsOfOwner()
+        {
+
+        }
+
+        public static void MostCatsAdoptedBy()
+        {
+
+        }
+
+        public static void HowManyOwnerAdoptedPetBefore2015()
+        {
+
+        }
+
+        public static void AvarageAgeOfPets()
+        {
+
         }
 
         public static void Exit()
