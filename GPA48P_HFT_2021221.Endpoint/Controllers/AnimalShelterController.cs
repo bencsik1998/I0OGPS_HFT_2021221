@@ -23,11 +23,11 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             return asl.GetAll();
         }
 
-        // GET /animalshelter/id
-        [HttpGet("{id}")]
-        public AnimalShelter Get(int id)
+        // GET /animalshelter/shelterid
+        [HttpGet("{shelterid}")]
+        public AnimalShelter Get(int shelterId)
         {
-            return asl.Read(id);
+            return asl.Read(shelterId);
         }
 
         // POST /animalshelter
@@ -37,18 +37,18 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             asl.Create(value);
         }
 
-        // PUT /animalshelter/id
-        [HttpPut("{id}")]
+        // PUT /animalshelter/shelterid
+        [HttpPut("{shelterid}")]
         public void Put([FromBody] AnimalShelter value)
         {
             asl.Update(value);
         }
 
-        // DELETE /animalshelter/id
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE /animalshelter/shelterid
+        [HttpDelete("{shelterid}")]
+        public void Delete(int shelterId)
         {
-            asl.Delete(id);
+            asl.Delete(shelterId);
         }
     }
 }
