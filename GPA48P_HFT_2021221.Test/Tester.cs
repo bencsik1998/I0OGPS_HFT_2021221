@@ -29,27 +29,27 @@ namespace GPA48P_HFT_2021221.Test
             {
                 new Pet()
                 {
-                    PetId = 1, Class = "Kutya", Type = "Labrador", Age = 2, AdoptionTime = new DateTime(2019,7,11), ShelterId = 1, OwnerId = 1
+                    PetId = 1, Class = "Kutya", Type = "Labrador", Age = 2, AdoptionYear = 2019, ShelterId = 1, OwnerId = 1
                 },
                 new Pet()
                 {
-                    PetId = 2, Class = "Kutya", Type = "Border collie", Age = 4, AdoptionTime = new DateTime(2018,6,21), ShelterId = 1, OwnerId = 1
+                    PetId = 2, Class = "Kutya", Type = "Border collie", Age = 4, AdoptionYear = 2018, ShelterId = 1, OwnerId = 1
                 },
                 new Pet()
                 {
-                    PetId = 3, Class = "Kutya", Type = "Beagle", Age = 6, AdoptionTime = new DateTime(2017,8,31), ShelterId = 1, OwnerId = 1
+                    PetId = 3, Class = "Kutya", Type = "Beagle", Age = 6, AdoptionYear = 2017, ShelterId = 1, OwnerId = 1
                 },
                 new Pet()
                 {
-                    PetId = 4, Class = "Macska", Type = "Perzsa", Age = 8, AdoptionTime = new DateTime(2015,3,5), ShelterId = 2, OwnerId = 2
+                    PetId = 4, Class = "Macska", Type = "Perzsa", Age = 8, AdoptionYear = 2016, ShelterId = 2, OwnerId = 2
                 },
                 new Pet()
                 {
-                    PetId = 5, Class = "Macska", Type = "Bengáli", Age = 10, AdoptionTime = new DateTime(2014,5,23), ShelterId = 3, OwnerId = 3
+                    PetId = 5, Class = "Macska", Type = "Bengáli", Age = 10, AdoptionYear = 2014, ShelterId = 3, OwnerId = 3
                 },
                 new Pet()
                 {
-                    PetId = 6, Class = "Macska", Type = "Szfinx", Age = 12, AdoptionTime = new DateTime(2013,1,17), ShelterId = 2, OwnerId = 2
+                    PetId = 6, Class = "Macska", Type = "Szfinx", Age = 12, AdoptionYear = 2013, ShelterId = 2, OwnerId = 2
                 }
             }.AsQueryable();
 
@@ -128,16 +128,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result, Is.EqualTo(7));
         }
 
-        // Teszt 2 - Ide még kell egy többtáblás non-crud tesztelés
-        [Test]
-        public void Test6()
-        {
-            // ACT
-
-            // ASSERT
-        }
-
-        // Teszt 3
+        // Teszt 2
         // Megadott menhely ID alapján nézzük meg a kisállatok átlagéletkorát!
         [Test]
         public void AvarageAgeByPetsAtOneShelterTest()
@@ -149,7 +140,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result, Is.EqualTo(4));
         }
 
-        // Teszt 4
+        // Teszt 3
         // // Nézzük meg, hogy menhelyenként mennyi a kutyák átlagéletkora!
         [Test]
         public void AvarageAgeOfDogsAtAllShelters()
@@ -182,7 +173,7 @@ namespace GPA48P_HFT_2021221.Test
             return false;
         }
 
-        // Teszt 5
+        // Teszt 4
         // Megadott gazdi ID alapján nézzük meg, hogy hány kutyája van!
         [Test]
         public void DogsOfOwnerTest()
@@ -194,7 +185,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result.Count(), Is.EqualTo(0));
         }
 
-        // Teszt 6
+        // Teszt 5
         // Nézzük meg melyik gazdi fogadta örökbe a legtöbb macskát!
         [Test]
         public void MostCatsAdoptedByTest()
@@ -204,6 +195,18 @@ namespace GPA48P_HFT_2021221.Test
 
             // ASSERT
             Assert.That(result.OwnerId, Is.EqualTo(2));
+        }
+
+        // Teszt 6
+        // Nézzük meg hány gazdi fogadott örökbe kisállatot 2015 előtt!
+        [Test]
+        public void HowManyOwnerAdoptedPetBefore2015Test()
+        {
+            // ACT
+            var result = ownerLogic.HowManyOwnerAdoptedPetBefore2015();
+
+            // ASSERT
+            Assert.That(result, Is.EqualTo(3));
         }
 
         // Teszt 7 - Create crud metódus tesztelés
