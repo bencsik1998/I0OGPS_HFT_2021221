@@ -70,8 +70,10 @@ namespace GPA48P_HFT_2021221.Client
                 TaxNumber = taxNumber
             }, "animalshelter");
 
-            Console.WriteLine("New animal shelter created successfully. Push enter to continue!");
+            Console.WriteLine("Animal shelter created successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
             Console.ReadLine();
+            MainMenu();
         }
 
         public static void Exit()
