@@ -23,11 +23,11 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             return ol.GetAll();
         }
 
-        // GET /owner/id
-        [HttpGet("{id}")]
-        public Owner Get(int id)
+        // GET /owner/ownerid
+        [HttpGet("{ownerid}")]
+        public Owner Get(int ownerId)
         {
-            return ol.Read(id);
+            return ol.Read(ownerId);
         }
 
         // POST /owner
@@ -37,18 +37,18 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             ol.Create(value);
         }
 
-        // PUT /owner
-        [HttpPut("{id}")]
+        // PUT /owner/ownerid
+        [HttpPut("{ownerid}")]
         public void Put([FromBody] Owner value)
         {
             ol.Update(value);
         }
 
-        // DELETE /owner/id
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE /owner/ownerid
+        [HttpDelete("{ownerid}")]
+        public void Delete(int ownerId)
         {
-            ol.Delete(id);
+            ol.Delete(ownerId);
         }
     }
 }
