@@ -17,9 +17,9 @@ namespace GPA48P_HFT_2021221.Client
             Console.WriteLine("| 1) Create a new animal shelter                    |");
             Console.WriteLine("| 2) Create a new owner                             |");
             Console.WriteLine("| 3) Create a new pet                               |");
-            Console.WriteLine("| 4) Read an existing animal shelter                |");
-            Console.WriteLine("| 5) Read an existing owner                         |");
-            Console.WriteLine("| 6) Read an existing pet                           |");
+            Console.WriteLine("| 4) Read an existing animal shelter by ID          |");
+            Console.WriteLine("| 5) Read an existing owner by ID                   |");
+            Console.WriteLine("| 6) Read an existing pet by ID                     |");
             Console.WriteLine("| 7) Update an existing animal shelter              |");
             Console.WriteLine("| 8) Update an existing owner                       |");
             Console.WriteLine("| 9) Update an existing pet                         |");
@@ -32,7 +32,7 @@ namespace GPA48P_HFT_2021221.Client
             Console.WriteLine("| 16) View which owner adopted the most cats        |");
             Console.WriteLine("| 17) View how much the avarage age of all pets     |");
             Console.WriteLine("| 17) IDE MÉG KELL MAJD VALMILYEN NON CRUD          |");
-            Console.WriteLine("| x) Exit                                           |");
+            Console.WriteLine("| X) Exit                                           |");
             Console.WriteLine("|---------------------------------------------------|");
             Console.Write("\r\nSelect an option: ");
 
@@ -47,7 +47,16 @@ namespace GPA48P_HFT_2021221.Client
                 case "3":
                     CreatePet();
                     break;
-                case "x":
+                case "4":
+                    ReadAnimalShelter();
+                    break;
+                case "5":
+                    ReadOwner();
+                    break;
+                case "6":
+                    ReadPet();
+                    break;
+                case "X":
                     Exit();
                     break;
                 default:
@@ -59,6 +68,7 @@ namespace GPA48P_HFT_2021221.Client
         {
             Console.Clear();
             RestService rest = new RestService("http://localhost:62480");
+
             Console.Write("New animal shelter name: ");
             string shelterName = Console.ReadLine();
             Console.Write("New animal shelter address: ");
@@ -76,6 +86,7 @@ namespace GPA48P_HFT_2021221.Client
                 TaxNumber = taxNumber
             }, "animalshelter");
 
+            Console.WriteLine();
             Console.WriteLine("Animal shelter created successfully");
             Console.WriteLine("Press enter to jump back to main menu");
             Console.ReadLine();
@@ -87,6 +98,7 @@ namespace GPA48P_HFT_2021221.Client
         {
             Console.Clear();
             RestService rest = new RestService("http://localhost:62480");
+
             Console.Write("New owner first name: ");
             string firstName = Console.ReadLine();
             Console.Write("New owner last name: ");
@@ -107,6 +119,7 @@ namespace GPA48P_HFT_2021221.Client
                 Age = age
             }, "owner");
 
+            Console.WriteLine();
             Console.WriteLine("Owner created successfully");
             Console.WriteLine("Press enter to jump back to main menu");
             Console.ReadLine();
@@ -118,6 +131,7 @@ namespace GPA48P_HFT_2021221.Client
         {
             Console.Clear();
             RestService rest = new RestService("http://localhost:62480");
+
             Console.Write("New pet class: ");
             string cLass = Console.ReadLine();
             Console.Write("New pet type: ");
@@ -142,6 +156,78 @@ namespace GPA48P_HFT_2021221.Client
             }, "pet");
 
             Console.WriteLine("Pet created successfully");
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void ReadAnimalShelter()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+
+            Console.Write("ID of the animal shelter: ");
+            int shelterId = int.Parse(Console.ReadLine());
+
+            AnimalShelter animalShelter = rest.Get<AnimalShelter>(shelterId, "animalshelter");
+
+            Console.WriteLine();
+            Console.WriteLine("Name: " + animalShelter.SheltertName);
+            Console.WriteLine("Address: " + animalShelter.Address);
+            Console.WriteLine("Phone number: " + animalShelter.PhoneNumber);
+            Console.WriteLine("Tax number: " + animalShelter.TaxNumber);
+
+            Console.WriteLine();
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void ReadOwner()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+
+            Console.Write("ID of the owner: ");
+            int ownerId = int.Parse(Console.ReadLine());
+
+            Owner owner = rest.Get<Owner>(ownerId, "owner");
+
+            Console.WriteLine();
+            Console.WriteLine("First name: " + owner.FirstName);
+            Console.WriteLine("Last name: " + owner.LastName);
+            Console.WriteLine("Address: " + owner.Address);
+            Console.WriteLine("Phone number: " + owner.PhoneNumber);
+            Console.WriteLine("Age: " + owner.Age);
+
+            Console.WriteLine();
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
+        }
+
+        public static void ReadPet()
+        {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
+
+            Console.Write("ID of the pet: ");
+            int petId = int.Parse(Console.ReadLine());
+
+            Pet pet = rest.Get<Pet>(petId, "pet");
+
+            Console.WriteLine();
+            Console.WriteLine("Class: " + pet.Class);
+            Console.WriteLine("Type: " + pet.Type);
+            Console.WriteLine("Age: " + pet.Age);
+            Console.WriteLine("Reception date: " + pet.ReceptionDate);
+            Console.WriteLine("Owner ID: " + pet.OwnerId);
+            Console.WriteLine("Animal shelter ID: " + pet.ShelterId);
+
+            Console.WriteLine();
             Console.WriteLine("Press enter to jump back to main menu");
             Console.ReadLine();
 
