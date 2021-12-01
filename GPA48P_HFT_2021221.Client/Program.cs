@@ -1,7 +1,4 @@
-﻿using GPA48P_HFT_2021221.Models;
-using System;
-
-namespace GPA48P_HFT_2021221.Client
+﻿namespace GPA48P_HFT_2021221.Client
 {
     class Program
     {
