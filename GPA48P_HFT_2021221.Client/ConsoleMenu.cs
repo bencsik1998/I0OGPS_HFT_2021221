@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GPA48P_HFT_2021221.Models;
 
 namespace GPA48P_HFT_2021221.Client
@@ -519,10 +516,13 @@ namespace GPA48P_HFT_2021221.Client
             Console.Clear();
             RestService rest = new RestService("http://localhost:62480");
 
-            var result = rest.Get<IEnumerable<string>>("/stat/whichownersadoptedpetbefore2015");
+            List<string> result = rest.Get<string>("/stat/whichownersadoptedpetbefore2015");
 
             Console.WriteLine("Owners who adopted pets before 2015:");
-            result.ForEach(x => Console.WriteLine(result));
+            foreach (string item in result)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.WriteLine();
             Console.WriteLine("Press enter to jump back to main menu");
@@ -536,7 +536,7 @@ namespace GPA48P_HFT_2021221.Client
             Console.Clear();
             RestService rest = new RestService("http://localhost:62480");
 
-            var result = rest.GetSingle<int>("/stat/avarageageofpets");
+            var result = rest.GetSingle<double>("/stat/avarageageofpets");
 
             Console.WriteLine("Avarage age of all pets:");
             Console.WriteLine(result);
