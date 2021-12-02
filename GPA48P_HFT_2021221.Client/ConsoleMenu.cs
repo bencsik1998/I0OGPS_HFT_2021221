@@ -30,7 +30,7 @@ namespace GPA48P_HFT_2021221.Client
             Console.WriteLine("| 14) View the dogs avarage age at all shelters     |");
             Console.WriteLine("| 15) View how much dogs have an owner by ID        |");
             Console.WriteLine("| 16) View which owner adopted the most cats        |");
-            Console.WriteLine("| 17) View how many owner adopted pet before 2015   |");
+            Console.WriteLine("| 17) View which owners adopted pet before 2015     |");
             Console.WriteLine("| 18) View how much the avarage age of all pets     |");
             Console.WriteLine("| X) Exit                                           |");
             Console.WriteLine("|---------------------------------------------------|");
@@ -87,7 +87,7 @@ namespace GPA48P_HFT_2021221.Client
                     MostCatsAdoptedBy();
                     break;
                 case "17":
-                    HowManyOwnerAdoptedPetBefore2015();
+                    WhichOwnersAdoptedPetBefore2015();
                     break;
                 case "18":
                     AvarageAgeOfPets();
@@ -450,7 +450,8 @@ namespace GPA48P_HFT_2021221.Client
             var result = rest.GetSingle<double>($"/stat/avarageagebypetsatoneshelter/{shelterId}");
 
             Console.WriteLine();
-            Console.WriteLine("The pets avarage age in a shelter: " + result);
+            Console.WriteLine("The pets avarage age in a shelter:");
+            Console.WriteLine(result);
 
             Console.WriteLine();
             Console.WriteLine("Press enter to jump back to main menu");
@@ -466,6 +467,7 @@ namespace GPA48P_HFT_2021221.Client
 
             var result = rest.Get<AvarageAgeOfDogsAtAllShelters>("/stat/avarageageofdogsatallshelters");
 
+            Console.WriteLine("Avarage age of dogs at all shelters:");
             result.ForEach(x => Console.WriteLine(x.ShelterName + "\t" + x.AvarageAge));
 
             Console.WriteLine();
@@ -497,17 +499,53 @@ namespace GPA48P_HFT_2021221.Client
 
         public static void MostCatsAdoptedBy()
         {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
 
+            var result = rest.GetSingle<Owner>("/stat/mostcatsadoptedby");
+
+            Console.WriteLine("The owner who adopted the most cats:");
+            Console.WriteLine(result.LastName + " " + result.FirstName);
+
+            Console.WriteLine();
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
         }
 
-        public static void HowManyOwnerAdoptedPetBefore2015()
+        public static void WhichOwnersAdoptedPetBefore2015()
         {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
 
+            var result = rest.Get<IEnumerable<string>>("/stat/whichownersadoptedpetbefore2015");
+
+            Console.WriteLine("Owners who adopted pets before 2015:");
+            result.ForEach(x => Console.WriteLine(result));
+
+            Console.WriteLine();
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
         }
 
         public static void AvarageAgeOfPets()
         {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
 
+            var result = rest.GetSingle<int>("/stat/avarageageofpets");
+
+            Console.WriteLine("Avarage age of all pets:");
+            Console.WriteLine(result);
+
+            Console.WriteLine();
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
         }
 
         public static void Exit()
