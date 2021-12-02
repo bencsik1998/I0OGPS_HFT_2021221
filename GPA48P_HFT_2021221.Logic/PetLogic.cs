@@ -64,7 +64,7 @@ namespace GPA48P_HFT_2021221.Logic
         {
             var result = petRepository.GetAll()
                                       .Where(x => x.AdoptionYear < 2015)
-                                      .Select(x => x.Owner.LastName + x.Owner.FirstName)
+                                      .Select(x => x.Owner.LastName + " " + x.Owner.FirstName)
                                       .Distinct().ToList();
             return result;
         }
