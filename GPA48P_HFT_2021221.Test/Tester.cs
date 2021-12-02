@@ -21,9 +21,7 @@ namespace GPA48P_HFT_2021221.Test
         [SetUp]
         public void Init()
         {
-            var mockAnimalShelterRepository = new Mock<IAnimalShelterRepository>();
-            var mockOwnerRepository = new Mock<IOwnerRepository>();
-            var mockPetRepsitory = new Mock<IPetRepository>();
+            //var mockPetRepsitory = new Mock<IPetRepository>();
 
             //AnimalShelter fakeAnimalShelter1 = new AnimalShelter();
             //fakeAnimalShelter1.ShelterId = 1;
@@ -133,6 +131,32 @@ namespace GPA48P_HFT_2021221.Test
             //        Owner = fakeOwner2
             //    }
             //}.AsQueryable();
+
+            //AvarageAgeOfDogsAtAllSheltersList = new List<AvarageAgeOfDogsAtAllShelters>()
+            //{
+            //    new AvarageAgeOfDogsAtAllShelters
+            //    {
+            //        ShelterName = "Menhely1", AvarageAge = 4
+            //    },
+            //    new AvarageAgeOfDogsAtAllShelters
+            //    {
+            //        ShelterName = "Menhely2", AvarageAge = 0
+            //    },
+            //    new AvarageAgeOfDogsAtAllShelters
+            //    {
+            //        ShelterName = "Menhely3", AvarageAge = 0
+            //    }
+            //};
+
+            //mockPetRepsitory.Setup((x) => x.GetAll()).Returns(pets);
+
+            //petLogic = new PetLogic(mockPetRepsitory.Object);
+
+            //#####################################################################################
+
+            var mockAnimalShelterRepository = new Mock<IAnimalShelterRepository>();
+            var mockOwnerRepository = new Mock<IOwnerRepository>();
+            var mockPetRepsitory = new Mock<IPetRepository>();
 
             var pets = new List<Pet>()
             {
