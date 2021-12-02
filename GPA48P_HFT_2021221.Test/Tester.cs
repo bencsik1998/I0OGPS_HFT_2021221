@@ -117,18 +117,6 @@ namespace GPA48P_HFT_2021221.Test
         }
 
         // Teszt 1
-        // // Nézzük meg, hogy mennyi az állatok átlagéletkora!
-        [Test]
-        public void AvarageAgeTest()
-        {
-            // ACT
-            double result = petLogic.AvarageAgeOfPets();
-
-            // ASSERT
-            Assert.That(result, Is.EqualTo(7));
-        }
-
-        // Teszt 2
         // Megadott menhely ID alapján nézzük meg a kisállatok átlagéletkorát!
         [Test]
         public void AvarageAgeByPetsAtOneShelterTest()
@@ -140,7 +128,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result, Is.EqualTo(4));
         }
 
-        // Teszt 3
+        // Teszt 2
         // // Nézzük meg, hogy menhelyenként mennyi a kutyák átlagéletkora!
         [Test]
         public void AvarageAgeOfDogsAtAllShelters()
@@ -173,8 +161,8 @@ namespace GPA48P_HFT_2021221.Test
             return false;
         }
 
-        // Teszt 4
-        // Megadott gazdi ID alapján nézzük meg, hogy hány kutyája van!
+        // Teszt 3
+        // Megadott gazdi ID alapján nézzük meg, milyen kutyái vannak!
         [Test]
         public void DogsOfOwnerTest()
         {
@@ -185,7 +173,7 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result.Count(), Is.EqualTo(0));
         }
 
-        // Teszt 5
+        // Teszt 4
         // Nézzük meg melyik gazdi fogadta örökbe a legtöbb macskát!
         [Test]
         public void MostCatsAdoptedByTest()
@@ -197,16 +185,28 @@ namespace GPA48P_HFT_2021221.Test
             Assert.That(result.OwnerId, Is.EqualTo(2));
         }
 
-        // Teszt 6
-        // Nézzük meg hány gazdi fogadott örökbe 2015 előtt kisállatot!
+        // Teszt 5
+        // // Nézzük meg, hogy mennyi az állatok átlagéletkora!
         [Test]
-        public void HowManyOwnerAdoptedPetBefore2015Test()
+        public void AvarageAgeTest()
         {
             // ACT
-            var result = ownerLogic.HowManyOwnerAdoptedPetBefore2015();
+            double result = petLogic.AvarageAgeOfPets();
 
             // ASSERT
-            Assert.That(result, Is.EqualTo(3));
+            Assert.That(result, Is.EqualTo(7));
+        }
+
+        // Teszt 6
+        // Nézzük meg mely gazdik fogadtak örökbe 2015 előtt kisállatot!
+        [Test]
+        public void WhichOwnersAdoptedPetBefore2015()
+        {
+            // ACT
+            var result = petLogic.WhichOwnersAdoptedPetBefore2015();
+
+            // ASSERT
+            Assert.That(result.Contains("Dániel") && (result.Contains("Norbert")));
         }
 
         // Teszt 7 - Create crud metódus tesztelés
