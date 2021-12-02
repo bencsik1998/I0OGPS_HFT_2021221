@@ -25,31 +25,176 @@ namespace GPA48P_HFT_2021221.Test
             var mockOwnerRepository = new Mock<IOwnerRepository>();
             var mockPetRepsitory = new Mock<IPetRepository>();
 
+            //AnimalShelter fakeAnimalShelter1 = new AnimalShelter();
+            //fakeAnimalShelter1.ShelterId = 1;
+            //fakeAnimalShelter1.SheltertName = "Menhely1";
+            //fakeAnimalShelter1.Address = "New York";
+            //fakeAnimalShelter1.PhoneNumber = "06709871234";
+            //fakeAnimalShelter1.TaxNumber = "18942873562";
+
+            //AnimalShelter fakeAnimalShelter2 = new AnimalShelter();
+            //fakeAnimalShelter2.ShelterId = 2;
+            //fakeAnimalShelter2.SheltertName = "Menhely2";
+            //fakeAnimalShelter2.Address = "Tokió";
+            //fakeAnimalShelter2.PhoneNumber = "06209128456";
+            //fakeAnimalShelter2.TaxNumber = "19371496731";
+
+            //AnimalShelter fakeAnimalShelter3 = new AnimalShelter();
+            //fakeAnimalShelter3.ShelterId = 3;
+            //fakeAnimalShelter3.SheltertName = "Menhely3";
+            //fakeAnimalShelter3.Address = "Peking";
+            //fakeAnimalShelter3.PhoneNumber = "06306541298";
+            //fakeAnimalShelter3.TaxNumber = "19285239871";
+
+            //Owner fakeOwner1 = new Owner();
+            //fakeOwner1.OwnerId = 1;
+            //fakeOwner1.FirstName = "János";
+            //fakeOwner1.LastName = "Fekete";
+            //fakeOwner1.Address = "London";
+            //fakeOwner1.PhoneNumber = "06201239876";
+            //fakeOwner1.Age = 10;
+
+            //Owner fakeOwner2 = new Owner();
+            //fakeOwner2.OwnerId = 1;
+            //fakeOwner2.FirstName = "Dániel";
+            //fakeOwner2.LastName = "Borzavári";
+            //fakeOwner2.Address = "Los Angeles";
+            //fakeOwner2.PhoneNumber = "06304561298";
+            //fakeOwner2.Age = 20;
+
+            //Owner fakeOwner3 = new Owner();
+            //fakeOwner3.OwnerId = 1;
+            //fakeOwner3.FirstName = "Norbert";
+            //fakeOwner3.LastName = "Tóth";
+            //fakeOwner3.Address = "Párizs";
+            //fakeOwner3.PhoneNumber = "06709871234";
+            //fakeOwner3.Age = 30;
+
+            //var pets = new List<Pet>()
+            //{
+            //    new Pet()
+            //    {
+            //        PetId = 1,
+            //        Class = "Kutya",
+            //        Type = "Labrador",
+            //        Age = 2,
+            //        AdoptionYear = 2019,
+            //        AnimalShelter = fakeAnimalShelter1,
+            //        Owner = fakeOwner1
+            //    },
+            //    new Pet()
+            //    {
+            //        PetId = 2,
+            //        Class = "Kutya",
+            //        Type = "Border collie",
+            //        Age = 4,
+            //        AdoptionYear = 2018,
+            //        AnimalShelter = fakeAnimalShelter1,
+            //        Owner = fakeOwner1
+            //    },
+            //    new Pet()
+            //    {
+            //        PetId = 3,
+            //        Class = "Kutya",
+            //        Type = "Beagle",
+            //        Age = 6,
+            //        AdoptionYear = 2017,
+            //        AnimalShelter = fakeAnimalShelter1,
+            //        Owner = fakeOwner1
+            //    },
+            //    new Pet()
+            //    {
+            //        PetId = 4,
+            //        Class = "Macska",
+            //        Type = "Perzsa",
+            //        Age = 8,
+            //        AdoptionYear = 2016,
+            //        AnimalShelter = fakeAnimalShelter2,
+            //        Owner = fakeOwner2
+            //    },
+            //    new Pet()
+            //    {
+            //        PetId = 5,
+            //        Class = "Macska",
+            //        Type = "Bengáli",
+            //        Age = 10,
+            //        AdoptionYear = 2014,
+            //        AnimalShelter = fakeAnimalShelter3,
+            //        Owner = fakeOwner3
+            //    },
+            //    new Pet()
+            //    {
+            //        PetId = 6,
+            //        Class = "Macska",
+            //        Type = "Szfinx",
+            //        Age = 12,
+            //        AdoptionYear = 2013,
+            //        AnimalShelter = fakeAnimalShelter2,
+            //        Owner = fakeOwner2
+            //    }
+            //}.AsQueryable();
+
             var pets = new List<Pet>()
             {
                 new Pet()
                 {
-                    PetId = 1, Class = "Kutya", Type = "Labrador", Age = 2, AdoptionYear = 2019, ShelterId = 1, OwnerId = 1
+                    PetId = 1,
+                    Class = "Kutya",
+                    Type = "Labrador",
+                    Age = 2,
+                    AdoptionYear = 2019,
+                    ShelterId = 1,
+                    OwnerId = 1
                 },
                 new Pet()
                 {
-                    PetId = 2, Class = "Kutya", Type = "Border collie", Age = 4, AdoptionYear = 2018, ShelterId = 1, OwnerId = 1
+                    PetId = 2,
+                    Class = "Kutya",
+                    Type = "Border collie",
+                    Age = 4,
+                    AdoptionYear = 2018,
+                    ShelterId = 1,
+                    OwnerId = 1
                 },
                 new Pet()
                 {
-                    PetId = 3, Class = "Kutya", Type = "Beagle", Age = 6, AdoptionYear = 2017, ShelterId = 1, OwnerId = 1
+                    PetId = 3,
+                    Class = "Kutya",
+                    Type = "Beagle",
+                    Age = 6,
+                    AdoptionYear = 2017,
+                    ShelterId = 1,
+                    OwnerId = 1
                 },
                 new Pet()
                 {
-                    PetId = 4, Class = "Macska", Type = "Perzsa", Age = 8, AdoptionYear = 2016, ShelterId = 2, OwnerId = 2
+                    PetId = 4,
+                    Class = "Macska",
+                    Type = "Perzsa",
+                    Age = 8,
+                    AdoptionYear = 2016,
+                    ShelterId = 2,
+                    OwnerId = 2
                 },
                 new Pet()
                 {
-                    PetId = 5, Class = "Macska", Type = "Bengáli", Age = 10, AdoptionYear = 2014, ShelterId = 3, OwnerId = 3
+                    PetId = 5,
+                    Class = "Macska",
+                    Type = "Bengáli",
+                    Age = 10,
+                    AdoptionYear = 2014,
+                    ShelterId = 3,
+                    OwnerId = 3
                 },
                 new Pet()
                 {
-                    PetId = 6, Class = "Macska", Type = "Szfinx", Age = 12, AdoptionYear = 2013, ShelterId = 2, OwnerId = 2
+                    PetId = 6,
+                    Class = "Macska",
+                    Type = "Szfinx",
+                    Age = 12,
+                    AdoptionYear = 2013,
+                    ShelterId = 2,
+                    OwnerId = 2
                 }
             }.AsQueryable();
 
@@ -57,17 +202,29 @@ namespace GPA48P_HFT_2021221.Test
             {
                 new AnimalShelter()
                 {
-                    ShelterId = 1, SheltertName = "Menhely1", Address = "New York", PhoneNumber = "06709871234", TaxNumber = "18942873562",
+                    ShelterId = 1,
+                    SheltertName = "Menhely1",
+                    Address = "New York",
+                    PhoneNumber = "06709871234",
+                    TaxNumber = "18942873562",
                     Pets = pets.Where(x => x.ShelterId.Equals(1)).ToList()
                 },
                 new AnimalShelter()
                 {
-                    ShelterId = 2, SheltertName = "Menhely2", Address = "Tokió", PhoneNumber = "06209128456", TaxNumber = "19371496731",
+                    ShelterId = 2,
+                    SheltertName = "Menhely2",
+                    Address = "Tokió",
+                    PhoneNumber = "06209128456",
+                    TaxNumber = "19371496731",
                     Pets = pets.Where(x => x.ShelterId.Equals(2)).ToList()
                 },
                 new AnimalShelter()
                 {
-                    ShelterId = 3, SheltertName = "Menhely3", Address = "Peking", PhoneNumber = "06306541298", TaxNumber = "19285239871",
+                    ShelterId = 3,
+                    SheltertName = "Menhely3",
+                    Address = "Peking",
+                    PhoneNumber = "06306541298",
+                    TaxNumber = "19285239871",
                     Pets = pets.Where(x => x.ShelterId.Equals(3)).ToList()
                 }
             }.AsQueryable();
@@ -76,17 +233,32 @@ namespace GPA48P_HFT_2021221.Test
             {
                 new Owner()
                 {
-                    OwnerId = 1, FirstName = "János", LastName = "Fekete", Address = "London", PhoneNumber = "06201239876", Age = 10,
+                    OwnerId = 1,
+                    FirstName = "János",
+                    LastName = "Fekete",
+                    Address = "London",
+                    PhoneNumber = "06201239876",
+                    Age = 10,
                     Pets = pets.Where(x => x.ShelterId.Equals(1)).ToList()
                 },
                 new Owner()
                 {
-                    OwnerId = 2, FirstName = "Dániel", LastName = "Borzavári", Address = "Los Angeles", PhoneNumber = "06304561298", Age = 20,
+                    OwnerId = 2,
+                    FirstName = "Dániel",
+                    LastName = "Borzavári",
+                    Address = "Los Angeles",
+                    PhoneNumber = "06304561298",
+                    Age = 20,
                     Pets = pets.Where(x => x.ShelterId.Equals(2)).ToList()
                 },
                 new Owner()
                 {
-                    OwnerId = 3, FirstName = "Norbert", LastName = "Tóth", Address = "Párizs", PhoneNumber = "06709871234", Age = 30,
+                    OwnerId = 3,
+                    FirstName = "Norbert",
+                    LastName = "Tóth",
+                    Address = "Párizs",
+                    PhoneNumber = "06709871234",
+                    Age = 30,
                     Pets = pets.Where(x => x.ShelterId.Equals(3)).ToList()
                 }
             }.AsQueryable();
@@ -203,10 +375,8 @@ namespace GPA48P_HFT_2021221.Test
         public void WhichOwnersAdoptedPetBefore2015()
         {
             // ACT
-            var result = petLogic.WhichOwnersAdoptedPetBefore2015();
 
             // ASSERT
-            Assert.That(result.Contains("Dániel") && (result.Contains("Norbert")));
         }
 
         // Teszt 7 - Create crud metódus tesztelés
