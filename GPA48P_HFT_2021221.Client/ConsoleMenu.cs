@@ -446,8 +446,8 @@ namespace GPA48P_HFT_2021221.Client
             RestService rest = new RestService("http://localhost:62480");
 
             Console.Write("Enter animal shelter ID: ");
-            int shelterid = int.Parse(Console.ReadLine());
-            var result = rest.GetSingle<double>($"/stat/avarageagebypetsatoneshelter/{shelterid}");
+            int shelterId = int.Parse(Console.ReadLine());
+            var result = rest.GetSingle<double>($"/stat/avarageagebypetsatoneshelter/{shelterId}");
 
             Console.WriteLine();
             Console.WriteLine("The pets avarage age in a shelter: " + result);
@@ -461,12 +461,38 @@ namespace GPA48P_HFT_2021221.Client
 
         public static void AvarageAgeOfDogsAtAllShelters()
         {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
 
+            var result = rest.Get<AvarageAgeOfDogsAtAllShelters>("/stat/avarageageofdogsatallshelters");
+
+            result.ForEach(x => Console.WriteLine(x.ShelterName + "\t" + x.AvarageAge));
+
+            Console.WriteLine();
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
         }
 
         public static void DogsOfOwner()
         {
+            Console.Clear();
+            RestService rest = new RestService("http://localhost:62480");
 
+            Console.Write("Enter owner ID: ");
+            int ownerId = int.Parse(Console.ReadLine());
+            var result = rest.Get<Pet>($"/stat/dogsofowner/{ownerId}");
+
+            Console.WriteLine();
+            Console.WriteLine("List of the dogs type:");
+            result.ForEach(x => Console.WriteLine("-> " + x.Type));
+
+            Console.WriteLine();
+            Console.WriteLine("Press enter to jump back to main menu");
+            Console.ReadLine();
+
+            MainMenu();
         }
 
         public static void MostCatsAdoptedBy()
