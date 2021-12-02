@@ -68,7 +68,7 @@ namespace GPA48P_HFT_2021221.Logic
             ownerRepository.Update(owner);
         }
 
-        // Megadott gazdi ID alapján nézzük meg, hogy hány kutyája van!
+        // Megadott gazdi ID alapján nézzük meg, milyen kutyái vannak!
         public IEnumerable<Pet> DogsOfOwner(int ownerId)
         {
             var result = ownerRepository.GetAll()
