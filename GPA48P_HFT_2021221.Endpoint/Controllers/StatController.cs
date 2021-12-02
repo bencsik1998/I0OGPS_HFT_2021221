@@ -55,6 +55,7 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             return ol.HowManyOwnerAdoptedPetBefore2015();
         }
 
+        // GET: /stat/avarageageofpets
         [HttpGet]
         public double AvarageAgeOfPets()
         {
