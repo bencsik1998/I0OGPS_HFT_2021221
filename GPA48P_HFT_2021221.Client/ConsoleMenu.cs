@@ -352,7 +352,7 @@ namespace GPA48P_HFT_2021221.Client
 
             Console.WriteLine();
             Console.Write("New pet class: ");
-            string cLass = Console.ReadLine();
+            string classy = Console.ReadLine();
             Console.Write("New pet type: ");
             string type = Console.ReadLine();
             Console.Write("New pet age: ");
@@ -367,7 +367,7 @@ namespace GPA48P_HFT_2021221.Client
             rest.Put(new Pet
             {
                 PetId = petId,
-                Class = cLass,
+                Class = classy,
                 Type = type,
                 Age = age,
                 AdoptionYear = adoptionYear,
