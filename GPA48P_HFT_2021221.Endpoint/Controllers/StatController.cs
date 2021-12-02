@@ -48,18 +48,18 @@ namespace GPA48P_HFT_2021221.Endpoint.Controllers
             return ol.MostCatsAdoptedBy();
         }
 
-        // GET: /stat/howmanyowneradoptedpetbefore2015
-        [HttpGet]
-        public int HowManyOwnerAdoptedPetBefore2015()
-        {
-            return ol.HowManyOwnerAdoptedPetBefore2015();
-        }
-
         // GET: /stat/avarageageofpets
         [HttpGet]
         public double AvarageAgeOfPets()
         {
             return pl.AvarageAgeOfPets();
+        }
+
+        // GET: /stat/whichownersadoptedpetbefore2015
+        [HttpGet]
+        public IEnumerable<string> WhichOwnersAdoptedPetBefore2015()
+        {
+            return pl.WhichOwnersAdoptedPetBefore2015();
         }
     }
 }
