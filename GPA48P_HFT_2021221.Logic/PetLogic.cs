@@ -62,12 +62,6 @@ namespace GPA48P_HFT_2021221.Logic
         // Nézzük meg mely gazdik fogadtak örökbe 2015 előtt kisállatot!
         public IEnumerable<string> WhichOwnersAdoptedPetBefore2015()
         {
-            //var result = from x in petRepository.GetAll()
-            //             where x.AdoptionYear < 2015
-            //             select x.Owner.FirstName;
-
-            //return result;
-
             var result = petRepository.GetAll()
                                       .Where(x => x.AdoptionYear < 2015)
                                       .Select(x => x.Owner.LastName + x.Owner.FirstName)
