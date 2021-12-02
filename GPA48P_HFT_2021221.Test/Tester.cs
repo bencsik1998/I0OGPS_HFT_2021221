@@ -21,139 +21,6 @@ namespace GPA48P_HFT_2021221.Test
         [SetUp]
         public void Init()
         {
-            //var mockPetRepsitory = new Mock<IPetRepository>();
-
-            //AnimalShelter fakeAnimalShelter1 = new AnimalShelter();
-            //fakeAnimalShelter1.ShelterId = 1;
-            //fakeAnimalShelter1.SheltertName = "Menhely1";
-            //fakeAnimalShelter1.Address = "New York";
-            //fakeAnimalShelter1.PhoneNumber = "06709871234";
-            //fakeAnimalShelter1.TaxNumber = "18942873562";
-
-            //AnimalShelter fakeAnimalShelter2 = new AnimalShelter();
-            //fakeAnimalShelter2.ShelterId = 2;
-            //fakeAnimalShelter2.SheltertName = "Menhely2";
-            //fakeAnimalShelter2.Address = "Tokió";
-            //fakeAnimalShelter2.PhoneNumber = "06209128456";
-            //fakeAnimalShelter2.TaxNumber = "19371496731";
-
-            //AnimalShelter fakeAnimalShelter3 = new AnimalShelter();
-            //fakeAnimalShelter3.ShelterId = 3;
-            //fakeAnimalShelter3.SheltertName = "Menhely3";
-            //fakeAnimalShelter3.Address = "Peking";
-            //fakeAnimalShelter3.PhoneNumber = "06306541298";
-            //fakeAnimalShelter3.TaxNumber = "19285239871";
-
-            //Owner fakeOwner1 = new Owner();
-            //fakeOwner1.OwnerId = 1;
-            //fakeOwner1.FirstName = "János";
-            //fakeOwner1.LastName = "Fekete";
-            //fakeOwner1.Address = "London";
-            //fakeOwner1.PhoneNumber = "06201239876";
-            //fakeOwner1.Age = 10;
-
-            //Owner fakeOwner2 = new Owner();
-            //fakeOwner2.OwnerId = 1;
-            //fakeOwner2.FirstName = "Dániel";
-            //fakeOwner2.LastName = "Borzavári";
-            //fakeOwner2.Address = "Los Angeles";
-            //fakeOwner2.PhoneNumber = "06304561298";
-            //fakeOwner2.Age = 20;
-
-            //Owner fakeOwner3 = new Owner();
-            //fakeOwner3.OwnerId = 1;
-            //fakeOwner3.FirstName = "Norbert";
-            //fakeOwner3.LastName = "Tóth";
-            //fakeOwner3.Address = "Párizs";
-            //fakeOwner3.PhoneNumber = "06709871234";
-            //fakeOwner3.Age = 30;
-
-            //var pets = new List<Pet>()
-            //{
-            //    new Pet()
-            //    {
-            //        PetId = 1,
-            //        Class = "Kutya",
-            //        Type = "Labrador",
-            //        Age = 2,
-            //        AdoptionYear = 2019,
-            //        AnimalShelter = fakeAnimalShelter1,
-            //        Owner = fakeOwner1
-            //    },
-            //    new Pet()
-            //    {
-            //        PetId = 2,
-            //        Class = "Kutya",
-            //        Type = "Border collie",
-            //        Age = 4,
-            //        AdoptionYear = 2018,
-            //        AnimalShelter = fakeAnimalShelter1,
-            //        Owner = fakeOwner1
-            //    },
-            //    new Pet()
-            //    {
-            //        PetId = 3,
-            //        Class = "Kutya",
-            //        Type = "Beagle",
-            //        Age = 6,
-            //        AdoptionYear = 2017,
-            //        AnimalShelter = fakeAnimalShelter1,
-            //        Owner = fakeOwner1
-            //    },
-            //    new Pet()
-            //    {
-            //        PetId = 4,
-            //        Class = "Macska",
-            //        Type = "Perzsa",
-            //        Age = 8,
-            //        AdoptionYear = 2016,
-            //        AnimalShelter = fakeAnimalShelter2,
-            //        Owner = fakeOwner2
-            //    },
-            //    new Pet()
-            //    {
-            //        PetId = 5,
-            //        Class = "Macska",
-            //        Type = "Bengáli",
-            //        Age = 10,
-            //        AdoptionYear = 2014,
-            //        AnimalShelter = fakeAnimalShelter3,
-            //        Owner = fakeOwner3
-            //    },
-            //    new Pet()
-            //    {
-            //        PetId = 6,
-            //        Class = "Macska",
-            //        Type = "Szfinx",
-            //        Age = 12,
-            //        AdoptionYear = 2013,
-            //        AnimalShelter = fakeAnimalShelter2,
-            //        Owner = fakeOwner2
-            //    }
-            //}.AsQueryable();
-
-            //AvarageAgeOfDogsAtAllSheltersList = new List<AvarageAgeOfDogsAtAllShelters>()
-            //{
-            //    new AvarageAgeOfDogsAtAllShelters
-            //    {
-            //        ShelterName = "Menhely1", AvarageAge = 4
-            //    },
-            //    new AvarageAgeOfDogsAtAllShelters
-            //    {
-            //        ShelterName = "Menhely2", AvarageAge = 0
-            //    },
-            //    new AvarageAgeOfDogsAtAllShelters
-            //    {
-            //        ShelterName = "Menhely3", AvarageAge = 0
-            //    }
-            //};
-
-            //mockPetRepsitory.Setup((x) => x.GetAll()).Returns(pets);
-
-            //petLogic = new PetLogic(mockPetRepsitory.Object);
-
-            //#####################################################################################
-
             var mockAnimalShelterRepository = new Mock<IAnimalShelterRepository>();
             var mockOwnerRepository = new Mock<IOwnerRepository>();
             var mockPetRepsitory = new Mock<IPetRepository>();
@@ -309,7 +176,7 @@ namespace GPA48P_HFT_2021221.Test
 
             animalShelterLogic = new AnimalShelterLogic(mockAnimalShelterRepository.Object);
             ownerLogic = new OwnerLogic(mockOwnerRepository.Object);
-            petLogic = new PetLogic(mockPetRepsitory.Object);
+            petLogic = new PetLogic(mockPetRepsitory.Object,mockOwnerRepository.Object);
         }
 
         // Teszt 1
@@ -398,16 +265,49 @@ namespace GPA48P_HFT_2021221.Test
         [Test]
         public void WhichOwnersAdoptedPetBefore2015Test()
         {
-            var bigList = petLogic.WhichOwnersAdoptedPetBefore2015();
-            List<string> filteredList = new List<string>()
-            { 
-                "Borzavári Dániel",
-                "Tóth Norbert"
-            };
-            foreach (string owner in bigList)
+            // ACT
+            
+
+            // ASSERT
+            var mockOwnerRepository = new Mock<IOwnerRepository>();
+            var mockPetRepository = new Mock<IPetRepository>();
+
+            int id = 1;
+
+            Owner owner = new Owner()
             {
-                Assert.That(filteredList.Contains(owner));
-            }
+                OwnerId = 1,
+                FirstName = "Bence",
+                LastName = "Fekete",
+                Address = "asdasdasd",
+                PhoneNumber = "06308769123",
+                Age = 42
+            };
+
+            Pet pet = new Pet()
+            {
+                PetId = 1,
+                Class = "asdasd",
+                Type = "asdasd",
+                Age = 8,
+                AdoptionYear = 2013,
+                ShelterId = 0,
+                OwnerId = 1
+            };
+
+            List<Pet> petList = new List<Pet>();
+            petList.Add(pet);
+
+            mockOwnerRepository.Setup(x => x.Read(id)).Returns(owner);
+            mockPetRepository.Setup(x => x.GetAll()).Returns(petList.AsQueryable());
+
+            petLogic = new PetLogic(mockPetRepository.Object, mockOwnerRepository.Object);
+
+            var result = petLogic.WhichOwnersAdoptedPetBefore2015();
+
+            string name1 = "Fekete Bence";
+
+            Assert.AreEqual(result.First(), name1);
         }
 
         // Teszt 7 - Create crud metódus tesztelés
