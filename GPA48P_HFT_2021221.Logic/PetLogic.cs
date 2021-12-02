@@ -58,5 +58,15 @@ namespace GPA48P_HFT_2021221.Logic
             return petRepository.GetAll()
                                 .Average(p => p.Age);
         }
+
+        // Nézzük meg mely gazdik fogadtak örökbe 2015 előtt kisállatot!
+        public IEnumerable<string> WhichOwnersAdoptedPetBefore2015()
+        {
+            var result = petRepository.GetAll()
+                                      .Where(x => x.AdoptionYear < 2015)
+                                      .Select(x => x.Owner.FirstName)
+                                      .Distinct().ToList();
+            return result;
+        }
     }
 }
