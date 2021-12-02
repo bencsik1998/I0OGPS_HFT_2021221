@@ -396,11 +396,18 @@ namespace GPA48P_HFT_2021221.Test
         // Teszt 6
         // Nézzük meg mely gazdik fogadtak örökbe 2015 előtt kisállatot!
         [Test]
-        public void WhichOwnersAdoptedPetBefore2015()
+        public void WhichOwnersAdoptedPetBefore2015Test()
         {
-            // ACT
-
-            // ASSERT
+            var bigList = petLogic.WhichOwnersAdoptedPetBefore2015();
+            List<string> filteredList = new List<string>()
+            { 
+                "Borzavári Dániel",
+                "Tóth Norbert"
+            };
+            foreach (string owner in bigList)
+            {
+                Assert.That(filteredList.Contains(owner));
+            }
         }
 
         // Teszt 7 - Create crud metódus tesztelés
