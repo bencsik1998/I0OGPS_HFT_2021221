@@ -39,9 +39,12 @@ namespace GPA48P_HFT_2021221.Repository
         public void Update(Pet pet)
         {
             var oldPet = Read(pet.PetId);
+            oldPet.Class = pet.Class;
             oldPet.Type = pet.Type;
             oldPet.Age = pet.Age;
             oldPet.AdoptionYear = pet.AdoptionYear;
+            oldPet.ShelterId = pet.ShelterId;
+            oldPet.OwnerId = pet.OwnerId;
             dataBase.SaveChanges();
         }
     }
