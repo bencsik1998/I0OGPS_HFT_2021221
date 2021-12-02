@@ -9,10 +9,12 @@ namespace GPA48P_HFT_2021221.Logic
     public class PetLogic : IPetLogic
     {
         IPetRepository petRepository;
+        IOwnerRepository ownerRepository;
 
-        public PetLogic(IPetRepository petRepository)
+        public PetLogic(IPetRepository petRepository, IOwnerRepository ownerRepository)
         {
             this.petRepository = petRepository;
+            this.ownerRepository = ownerRepository;
         }
 
         public void Create(Pet pet)
@@ -64,9 +66,17 @@ namespace GPA48P_HFT_2021221.Logic
         {
             var result = petRepository.GetAll()
                                       .Where(x => x.AdoptionYear < 2015)
-                                      .Select(x => x.Owner.LastName + " " + x.Owner.FirstName)
-                                      .Distinct().ToList();
-            return result;
+                                      .Select(x => x.OwnerId)
+                                      .Distinct();
+
+            List<string> owners = new List<string>();
+            result.ToList()
+                  .ForEach(x => owners
+                    .Add(ownerRepository
+                        .Read(x).LastName + " " + ownerRepository
+                        .Read(x).FirstName));
+
+            return owners;
         }
     }
 }
