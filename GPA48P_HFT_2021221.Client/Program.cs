@@ -9,6 +9,7 @@
             RestService rest = new RestService("http://localhost:62480");
 
             ConsoleMenu.MainMenu();
+            System.Console.WriteLine();
         }
     }
 }
