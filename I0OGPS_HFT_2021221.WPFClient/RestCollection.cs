@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace I0OGPS_HFT_2021221.WPFClient.RestClient
+namespace I0OGPS_HFT_2021221.WPFClient
 {
     public class RestService
     {
