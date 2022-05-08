@@ -1,12 +1,12 @@
-using GPA48P_HFT_2021221.Data;
-using GPA48P_HFT_2021221.Repository;
-using GPA48P_HFT_2021221.Logic;
+using I0OGPS_HFT_2021221.Data;
+using I0OGPS_HFT_2021221.Repository;
+using I0OGPS_HFT_2021221.Logic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace GPA48P_HFT_2021221.Endpoint
+namespace I0OGPS_HFT_2021221.Endpoint
 {
     public class Startup
     {
@@ -23,6 +23,8 @@ namespace GPA48P_HFT_2021221.Endpoint
             services.AddTransient<IPetRepository, PetRepository>();
 
             services.AddTransient<AnimalShelterDbContext, AnimalShelterDbContext>();
+
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -36,13 +38,14 @@ namespace GPA48P_HFT_2021221.Endpoint
                 .AllowCredentials()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
-                .WithOrigins("http://localhost:11829"));
+                .WithOrigins("http://localhost:57344"));
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

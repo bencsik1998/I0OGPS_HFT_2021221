@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace GPA48P_HFT_2021221.Endpoint
+namespace I0OGPS_HFT_2021221.Endpoint
 {
     public class Program
     {
