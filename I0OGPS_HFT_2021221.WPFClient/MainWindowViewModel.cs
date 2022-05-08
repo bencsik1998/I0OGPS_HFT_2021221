@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using GPA48P_HFT_2021221.Models;
-using I0OGPS_HFT_2021221.WPFClient.RestClient;
+using I0OGPS_HFT_2021221.WPFClient;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 
@@ -92,9 +92,9 @@ namespace I0OGPS_HFT_2021221.WPFClient
         {
             if (!DesignModeTrue)
             {
-                AnimalShelters = new RestCollection<AnimalShelter>("http://localhost:57343/animalshelter", "animalshelter", "hub");
-                Owners = new RestCollection<Owner>("http://localhost:57343/animalshelter", "owner", "hub");
-                Pets = new RestCollection<Pet>("http://localhost:57343/animalshelter", "pet", "hub");
+                AnimalShelters = new RestCollection<AnimalShelter>("http://localhost:57343/", "animalshelter");
+                Owners = new RestCollection<Owner>("http://localhost:57343/", "owner");
+                Pets = new RestCollection<Pet>("http://localhost:57343/", "pet");
 
                 CreateAnimalShelterCommand = new RelayCommand(() =>
                 {
