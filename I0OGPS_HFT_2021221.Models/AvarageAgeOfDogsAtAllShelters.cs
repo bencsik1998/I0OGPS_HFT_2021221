@@ -1,0 +1,10 @@
+﻿namespace I0OGPS_HFT_2021221.Models
+{
+    // Segéd osztály a lekérdezéshez
+    public class AvarageAgeOfDogsAtAllShelters
+    {
+        public string ShelterName { get; set; }
+
+        public double AvarageAge { get; set; }
+    }
+}

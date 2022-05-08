@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using GPA48P_HFT_2021221.Models;
+using I0OGPS_HFT_2021221.Models;
 using I0OGPS_HFT_2021221.WPFClient;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
