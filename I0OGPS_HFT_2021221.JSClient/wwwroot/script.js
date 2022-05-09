@@ -7,7 +7,7 @@ setupSignalR();
 
 function setupSignalR() {
     connection = new signalR.HubConnectionBuilder()
-        .withUrl("http://localhost:57343/hub")
+        .withUrl("http://localhost:62480/hub")
         .configureLogging(signalR.LogLevel.Information)
         .build();
 
@@ -41,7 +41,7 @@ async function start() {
 };
 
 async function getdata() {
-    await fetch('http://localhost:57343/animalshelter')
+    await fetch('http://localhost:62480/animalshelter')
         .then(x => x.json())
         .then(y => {
             shelters = y;
@@ -70,7 +70,7 @@ function create() {
     let name2 = document.getElementById('address').value;
     let name3 = document.getElementById('phoneNumber').value;
     let name4 = document.getElementById('taxNumber').value;
-    fetch('http://localhost:57343/animalshelter', {
+    fetch('http://localhost:62480/animalshelter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
@@ -106,7 +106,7 @@ function update() {
     let name2 = document.getElementById('addressToUpdate').value;
     let name3 = document.getElementById('phoneNumberToUpdate').value;
     let name4 = document.getElementById('taxNumberToUpdate').value;
-    fetch('http://localhost:57343/animalshelter', {
+    fetch('http://localhost:62480/animalshelter', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
@@ -129,7 +129,7 @@ function update() {
 }
 
 function remove(id) {
-    fetch('http://localhost:57343/animalshelter/' + id, {
+    fetch('http://localhost:62480/animalshelter/' + id, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json', },
         body: null

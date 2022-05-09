@@ -92,9 +92,9 @@ namespace I0OGPS_HFT_2021221.WPFClient
         {
             if (!DesignModeTrue)
             {
-                AnimalShelters = new RestCollection<AnimalShelter>("http://localhost:57343/", "animalshelter");
-                Owners = new RestCollection<Owner>("http://localhost:57343/", "owner");
-                Pets = new RestCollection<Pet>("http://localhost:57343/", "pet");
+                AnimalShelters = new RestCollection<AnimalShelter>("http://localhost:62480/", "animalshelter");
+                Owners = new RestCollection<Owner>("http://localhost:62480/", "owner");
+                Pets = new RestCollection<Pet>("http://localhost:62480/", "pet");
 
                 CreateAnimalShelterCommand = new RelayCommand(() =>
                 {

@@ -38,7 +38,7 @@ namespace I0OGPS_HFT_2021221.Endpoint
                 .AllowCredentials()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
-                .WithOrigins("http://localhost:57344"));
+                .WithOrigins("http://localhost:11829"));
 
             app.UseRouting();
 
