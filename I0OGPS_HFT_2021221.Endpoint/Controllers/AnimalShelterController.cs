@@ -2,6 +2,7 @@
 using I0OGPS_HFT_2021221.Logic;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.SignalR;
 
 namespace I0OGPS_HFT_2021221.Endpoint.Controllers
 {
@@ -11,9 +12,12 @@ namespace I0OGPS_HFT_2021221.Endpoint.Controllers
     {
         IAnimalShelterLogic asl;
 
-        public AnimalShelterController(IAnimalShelterLogic asl)
+        IHubContext<SignalRHub> hub;
+
+        public AnimalShelterController(IAnimalShelterLogic asl, IHubContext<SignalRHub> hub)
         {
             this.asl = asl;
+            this.hub = hub;
         }
 
         // GET: /animalshelter
@@ -35,6 +39,7 @@ namespace I0OGPS_HFT_2021221.Endpoint.Controllers
         public void Post([FromBody] AnimalShelter value)
         {
             asl.Create(value);
+            this.hub.Clients.All.SendAsync("AnimalShelterCreated", value);
         }
 
         // PUT /animalshelter
@@ -42,13 +47,16 @@ namespace I0OGPS_HFT_2021221.Endpoint.Controllers
         public void Put([FromBody] AnimalShelter value)
         {
             asl.Update(value);
+            this.hub.Clients.All.SendAsync("AnimalShelterUpdated", value);
         }
 
         // DELETE /animalshelter/shelterid
         [HttpDelete("{shelterid}")]
         public void Delete(int shelterId)
         {
+            var shelterToDelete = this.asl.Read(shelterId);
             asl.Delete(shelterId);
+            this.hub.Clients.All.SendAsync("AnimalShelterDeleted", shelterToDelete);
         }
     }
 }
