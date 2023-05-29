@@ -21,6 +21,8 @@ namespace I0OGPS_HFT_2021221.WPFClient
 
         public RestCollection<Pet> Pets { get; set; }
 
+        public RestService StatService { get; set; }
+
         public AnimalShelter AnimalShelterSel
         {
             get { return animalShelterSel; }
@@ -71,6 +73,13 @@ namespace I0OGPS_HFT_2021221.WPFClient
         public ICommand UpdateAnimalShelterCommand { get; set; }
         public ICommand DelAnimalShelterCommand { get; set; }
 
+        public ICommand GetAvgAgeOfAllPets { get; set; }
+        public ICommand GetAvgAgeOfDogsInAllShelters { get; set; }
+        public ICommand GetMostCatsAdoptedBy { get; set; }
+        public ICommand GetWhichOwnersAdoptedPetBefore2015 { get; set; }
+        public ICommand GetDogsOfOwner { get; set; }
+        public ICommand GetAvarageAgeByPetsAtOneShelter { get; set; }
+
         public ICommand CreateOwnerCommand { get; set; }
         public ICommand UpdateOwnerCommand { get; set; }
         public ICommand DelOwnerCommand { get; set; }
@@ -95,6 +104,7 @@ namespace I0OGPS_HFT_2021221.WPFClient
                 AnimalShelters = new RestCollection<AnimalShelter>("http://localhost:62480/", "animalshelter");
                 Owners = new RestCollection<Owner>("http://localhost:62480/", "owner");
                 Pets = new RestCollection<Pet>("http://localhost:62480/", "pet");
+                StatService = new RestService("http://localhost:62480/");
 
                 CreateAnimalShelterCommand = new RelayCommand(() =>
                 {
@@ -185,6 +195,66 @@ namespace I0OGPS_HFT_2021221.WPFClient
                 });
 
                 PetSel = new Pet();
+
+                // non crud queries
+
+                // for animal shelter
+                GetAvgAgeOfDogsInAllShelters = new RelayCommand(() =>
+                {
+                    List<AvarageAgeOfDogsAtAllShelters> results = StatService.Get<AvarageAgeOfDogsAtAllShelters>("stat/avarageageofdogsatallshelters");
+                    string resultShelters = String.Empty;
+                    foreach (AvarageAgeOfDogsAtAllShelters shelter in results)
+                    {
+                        resultShelters += shelter.ShelterName + "\t" + shelter.AvarageAge + "\n";
+                    }
+                    MessageBox.Show($"Avarage age of dogs at all shelters: \n {resultShelters}");
+                });
+
+                // for owners
+                GetWhichOwnersAdoptedPetBefore2015 = new RelayCommand(() =>
+                {
+                    List<string> results = StatService.Get<string>("stat/whichownersadoptedpetbefore2015");
+
+                    string resultOwners = String.Empty;
+                    foreach (string owner in results)
+                    {
+                        resultOwners += owner + "\n";
+                    }
+
+                    MessageBox.Show($"Owners who adopted pets before 2015: \n{resultOwners}");
+                });
+
+                GetMostCatsAdoptedBy = new RelayCommand(() =>
+                {
+                    Owner ownerResult = StatService.GetSingle<Owner>("stat/mostcatsadoptedby");
+                    MessageBox.Show($"The owner who adopted the most cats: {ownerResult.LastName} {ownerResult.FirstName}");
+                });
+
+                GetDogsOfOwner = new RelayCommand(() =>
+                {
+                    int selectedOwnerId = OwnerSel.OwnerId;
+
+                    List<Pet> result = StatService.Get<Pet>($"stat/dogsofowner/{selectedOwnerId}");
+
+                    string resultPets = String.Empty;
+
+                    foreach (Pet pet in result)
+                    {
+                        resultPets += "-> " + pet.Type + "\n";
+                    }
+
+                    MessageBox.Show($"List of the dogs type:\n {resultPets}");
+                });
+
+
+                GetAvarageAgeByPetsAtOneShelter = new RelayCommand(() =>
+                {
+                    int selectedShelterId = AnimalShelterSel.ShelterId;
+
+                    double result = StatService.GetSingle<double>($"stat/avarageagebypetsatoneshelter/{selectedShelterId}");
+
+                    MessageBox.Show($"The pets avarage age in selected shelter: {result}");
+                });
             }
         }
     }

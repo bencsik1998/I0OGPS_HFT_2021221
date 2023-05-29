@@ -21,6 +21,10 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
         <ListBox Grid.Column="0" ItemsSource="{Binding AnimalShelters}" SelectedItem="{Binding AnimalShelterSel}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -86,6 +90,22 @@
             <Button Content="Create Pet" Command="{Binding CreatePetCommand}" Padding="10"/>
             <Button Content="Update Pet" Command="{Binding UpdatePetCommand}" Padding="10"/>
             <Button Content="Delete Pet" Command="{Binding DelPetCommand}" Padding="10"/>
+        </StackPanel>
+        <!--Non CRUDs-->
+        <!--For shelters-->
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button Content="Avg age of all pets" Padding="10" Command="{Binding GetAvgAgeOfAllPets}"/>
+            <Button Content="Avg dogs age in all shelters" Padding="10" Command="{Binding GetAvgAgeOfDogsInAllShelters}"/>
+        </StackPanel>
+        <!--For owners-->
+        <StackPanel Grid.Row="2" Grid.Column="3">
+            <Button Content="Most cats adopted by" Padding="10" Command="{Binding GetMostCatsAdoptedBy}"/>
+            <Button Content="Get which owner adopted pet before 2015" Padding="10" Command="{Binding GetWhichOwnersAdoptedPetBefore2015}"/>
+        </StackPanel>
+        <!--For pets-->
+        <StackPanel Grid.Row="2" Grid.Column="5">
+            <Button Content="Dog type of owner" Padding="10" Command="{Binding GetDogsOfOwner}"/>
+            <Button Content="Pets avg in selected shelter" Padding="10" Command="{Binding GetAvarageAgeByPetsAtOneShelter}"/>
         </StackPanel>
     </Grid>
 </Window>
