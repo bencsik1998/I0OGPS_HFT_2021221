@@ -141,3 +141,73 @@ function remove(id) {
         })
         .catch((error) => { console.error('Error:', error); });
 }
+
+function QueryOne() {
+    document.getElementById('one').innerHTML = "";
+    fetch('http://localhost:62480/stat/avarageageofdogsatallshelters')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            let avg = 0;
+            data.forEach(x => avg += x.avarageAge);
+            avg /= data.length;
+            document.getElementById('one').innerHTML += avg;
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
+
+function QueryTwo() {
+    document.getElementById('two').innerHTML = "";
+    fetch('http://localhost:62480/stat/mostcatsadoptedby')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            document.getElementById('two').innerHTML += data.firstName + ' ' + data.lastName;
+            data.forEach(x => { document.getElementById('two').innerHTML += (x.title + ", ") })
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
+
+function QueryThree() {
+    document.getElementById('three').innerHTML = "";
+    fetch('http://localhost:62480/stat/whichownersadoptedpetbefore2015')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            data.forEach(x => { document.getElementById('three').innerHTML += (x + ", ") })
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
+
+function QueryFour() {
+    document.getElementById('four').innerHTML = "";
+    fetch('http://localhost:62480/stat/avarageageofpets')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            document.getElementById('four').innerHTML += data;
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
+
+function QueryFive() {
+    document.getElementById('five').innerHTML = "";
+    fetch('http://localhost:62480/stat/dogsofowner/' + document.getElementById('fiveInput').value)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            data.forEach(x => { document.getElementById('five').innerHTML += (x.type + ", ") })
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
+
+function QuerySix() {
+    document.getElementById('six').innerHTML = "";
+    fetch('http://localhost:62480/stat/avarageagebypetsatoneshelter/' + document.getElementById('sixInput').value)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            document.getElementById('six').innerHTML += data
+        })
+        .catch((error) => { console.error('Error:', error); });
+}

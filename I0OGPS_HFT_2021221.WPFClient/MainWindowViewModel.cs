@@ -198,6 +198,12 @@ namespace I0OGPS_HFT_2021221.WPFClient
 
                 // non crud queries
 
+                GetAvgAgeOfAllPets = new RelayCommand(() =>
+                {
+                    double result = StatService.GetSingle<double>("stat/avarageageofpets");
+                    MessageBox.Show($"Avarage age of all pets in all shelters: {result}");
+                });
+
                 // for animal shelter
                 GetAvgAgeOfDogsInAllShelters = new RelayCommand(() =>
                 {
